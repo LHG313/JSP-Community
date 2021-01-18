@@ -32,7 +32,7 @@ public class UsrDispatcherServlet extends HttpServlet {
 		String controllerName = requestUriBits[3];
 		String actionMethodName = requestUriBits[4];
 
-		MysqlUtil.setDBInfo("127.0.0.1", "sbsst", "sbs123414", "jspCommunity");
+		MysqlUtil.setDBInfo("127.0.0.1", "root", "", "jspCommunity");
 
 		String jspPath = null;
 
@@ -41,11 +41,9 @@ public class UsrDispatcherServlet extends HttpServlet {
 
 			if (actionMethodName.equals("list")) {
 				jspPath = memberController.showList(req, resp);
-			}
-			else if (actionMethodName.equals("join")) {
+			} else if (actionMethodName.equals("join")) {
 				jspPath = memberController.showJoin(req, resp);
-			}
-			else if (actionMethodName.equals("doJoin")) {
+			} else if (actionMethodName.equals("doJoin")) {
 				jspPath = memberController.doJoin(req, resp);
 			}
 		} else if (controllerName.equals("article")) {

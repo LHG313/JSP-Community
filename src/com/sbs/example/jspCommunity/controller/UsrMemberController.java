@@ -49,7 +49,7 @@ public class UsrMemberController {
 
 		int newArticleId = memberService.join(joinArgs);
 
-		req.setAttribute("alertMsg", newArticleId + "번 회원이 생성되었습니다.");
+		req.setAttribute("alertMsg", newArticleId + "번 회원이 가입되었습니다.");
 		req.setAttribute("replaceUrl", "join");
 		return "common/redirect";
 	}
