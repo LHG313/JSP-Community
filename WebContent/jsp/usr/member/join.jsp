@@ -82,36 +82,36 @@
 <script>
 	function check() {
 
-		if (join.loginId.value == '') {
+		if (join.loginId.value == ' ') {
 			alert('id를 입력하세요');
 			join.loginId.focus();
 			return false;
 		}
-		if (join.loginPw.value == '') {
+		if (join.loginId.value == join.loginId.value) {
+			alert('중복된 아이디입니다.');
+			join.loginId.focus();
+			return false;
+		}
+
+		if (join.loginPw.value == ' ') {
 			alert('비밀번호를 입력하세요');
 			join.loginPw.focus();
 			return false;
 		}
-
-		if (join.loginPw.value != join.loginPw.value) {
-			alert('비밀번호가 다릅니다. 다시 입력하세요');
-			formcheck.loginPw_check.focus();
-			return false;
-		}
-		if (join.name.value == '') {
+		if (join.name.value == ' ') {
 			alert('이름을 입력하세요');
 			join.name.focus();
 			return false;
 		}
-		if (join.nickname.value == '') {
+
+		if (join.nickname.value == ' ') {
 
 			alert('별명을 입력하세요');
 			join.nickname.focus();
 			return false;
 		}
 
-		if (join.email.value == '') {
-
+		if (join.email.value == ' ') {
 			alert('이메일을 입력하세요');
 			join.email.focus();
 			return false;
