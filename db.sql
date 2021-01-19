@@ -12,7 +12,7 @@ CREATE TABLE `member` (
     `email` VARCHAR(100) NOT NULL,
     loginId CHAR(50) NOT NULL UNIQUE,
     loginPw VARCHAR(200) NOT NULL,
-    adminLevel TINYINT(1) UNSIGNED NOT NULL DEFAULT 2 COMMENT '0=탈퇴/1=로그인정지/2=일반/3=인증된,4=관리자'
+    authLevel TINYINT(1) UNSIGNED NOT NULL DEFAULT 2 COMMENT '0=탈퇴/1=로그인정지/2=일반/3=인증된,4=관리자'
 );
 
 # 회원1 생성
@@ -117,3 +117,7 @@ memberId = 2,
 boardId = 1,
 title = '제목5',
 `body` = '내용5';
+
+select `M`. * from 
+member as `M`
+order by M.id desc
