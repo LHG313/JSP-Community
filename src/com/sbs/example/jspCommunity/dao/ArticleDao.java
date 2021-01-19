@@ -111,8 +111,8 @@ public class ArticleDao {
 			needToUpdate = true;
 			sql.append(", `body` = ?", args.get("body"));
 		}
-		
-		if ( needToUpdate == false ) {
+
+		if (needToUpdate == false) {
 			return 0;
 		}
 

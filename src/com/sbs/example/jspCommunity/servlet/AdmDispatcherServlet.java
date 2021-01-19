@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sbs.example.jspCommunity.container.Container;
 import com.sbs.example.jspCommunity.controller.AdmMemberController;
 
-//  adm/member/list
+// /adm/member/list
 @WebServlet("/adm/*")
 public class AdmDispatcherServlet extends DispatcherServlet {
 	@Override
@@ -21,6 +21,7 @@ public class AdmDispatcherServlet extends DispatcherServlet {
 				jspPath = memberController.showList(req, resp);
 			}
 		}
+
 		return jspPath;
 	}
 }

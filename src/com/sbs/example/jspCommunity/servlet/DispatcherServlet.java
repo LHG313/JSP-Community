@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,9 +29,11 @@ public abstract class DispatcherServlet extends HttpServlet {
 		if (doBeforeActionRs == null) {
 			return;
 		}
+
 		String jspPath = doAction(req, resp, (String) doBeforeActionRs.get("controllerName"), (String) doBeforeActionRs.get("actionMethodName"));
 
 		if (jspPath == null) {
+			resp.getWriter().append("jsp 정보가 없습니다.");
 			return;
 		}
 
@@ -40,7 +41,6 @@ public abstract class DispatcherServlet extends HttpServlet {
 	}
 
 	private Map<String, Object> doBeforeAction(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
 
@@ -52,12 +52,10 @@ public abstract class DispatcherServlet extends HttpServlet {
 			return null;
 		}
 
-		String controllerName = requestUriBits[3];
-		String actionMethodName = requestUriBits[4];
-
 		MysqlUtil.setDBInfo("127.0.0.1", "root", "", "jspCommunity");
 
-		String jspPath = null;
+		String controllerName = requestUriBits[3];
+		String actionMethodName = requestUriBits[4];
 
 		Map<String, Object> rs = new HashMap<>();
 		rs.put("controllerName", controllerName);
@@ -73,7 +71,5 @@ public abstract class DispatcherServlet extends HttpServlet {
 
 		RequestDispatcher rd = req.getRequestDispatcher("/jsp/" + jspPath + ".jsp");
 		rd.forward(req, resp);
-
 	}
-
 }

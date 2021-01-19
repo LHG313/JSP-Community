@@ -37,15 +37,15 @@ public class MemberDao {
 		sql.append(", `name` = ?", args.get("name"));
 		sql.append(", nickname = ?", args.get("nickname"));
 		sql.append(", email = ?", args.get("email"));
-		// sql.append(", cellphoneNo = ?", args.get("cellphoneNo"));
+		sql.append(", cellphoneNo = ?", args.get("cellphoneNo"));
 
 		return MysqlUtil.insert(sql);
 	}
 
-	public Member getMemberById(String loginId) {
+	public Member getMemberByLoginId(String loginId) {
 		SecSql sql = new SecSql();
-		sql.append("SELECT *");
-		sql.append("FROM `member`");
+		sql.append("SELECT M.*");
+		sql.append("FROM `member` AS M");
 		sql.append("WHERE loginId = ?", loginId);
 
 		Map<String, Object> map = MysqlUtil.selectRow(sql);

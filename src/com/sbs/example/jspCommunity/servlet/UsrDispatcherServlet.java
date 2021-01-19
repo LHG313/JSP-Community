@@ -1,29 +1,27 @@
 package com.sbs.example.jspCommunity.servlet;
 
-import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sbs.example.jspCommunity.container.Container;
 import com.sbs.example.jspCommunity.controller.UsrArticleController;
+import com.sbs.example.jspCommunity.controller.UsrHomeController;
 import com.sbs.example.jspCommunity.controller.UsrMemberController;
-import com.sbs.example.jspCommunity.dto.Member;
-import com.sbs.example.jspCommunity.service.MemberService;
-import com.sbs.example.mysqlutil.MysqlUtil;
 
 @WebServlet("/usr/*")
 public class UsrDispatcherServlet extends DispatcherServlet {
-
 	@Override
 	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName, String actionMethodName) {
 		String jspPath = null;
 
-		if (controllerName.equals("member")) {
+		if (controllerName.equals("home")) {
+			UsrHomeController homeController = Container.homeController;
+
+			if (actionMethodName.equals("main")) {
+				jspPath = homeController.showMain(req, resp);
+			}
+		} else if (controllerName.equals("member")) {
 			UsrMemberController memberController = Container.memberController;
 
 			if (actionMethodName.equals("list")) {
@@ -32,6 +30,12 @@ public class UsrDispatcherServlet extends DispatcherServlet {
 				jspPath = memberController.showJoin(req, resp);
 			} else if (actionMethodName.equals("doJoin")) {
 				jspPath = memberController.doJoin(req, resp);
+			} else if (actionMethodName.equals("login")) {
+				jspPath = memberController.showLogin(req, resp);
+			} else if (actionMethodName.equals("doLogin")) {
+				jspPath = memberController.doLogin(req, resp);
+			} else if (actionMethodName.equals("doLogout")) {
+				jspPath = memberController.doLogout(req, resp);
 			}
 		} else if (controllerName.equals("article")) {
 			UsrArticleController articleController = Container.articleController;
@@ -52,6 +56,7 @@ public class UsrDispatcherServlet extends DispatcherServlet {
 				jspPath = articleController.doDelete(req, resp);
 			}
 		}
+
 		return jspPath;
 	}
 }

@@ -10,7 +10,7 @@ import com.sbs.example.jspCommunity.dto.Member;
 public class MemberService {
 
 	private MemberDao memberDao;
-
+	
 	public MemberService() {
 		memberDao = Container.memberDao;
 	}
@@ -23,8 +23,8 @@ public class MemberService {
 		return memberDao.join(args);
 	}
 
-	public Member getMemberById(String loginId) {
-		return memberDao.getMemberById(loginId);
+	public Member getMemberByLoginId(String loginId) {
+		return memberDao.getMemberByLoginId(loginId);
 	}
 
 }
