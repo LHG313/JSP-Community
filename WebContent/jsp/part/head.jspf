@@ -55,6 +55,9 @@
 		<!-- 탑바 시작 -->
 		<header class="top-bar con-min-width visible-md-up">
 			<div class="con height-100p flex flex-jc-sb">
+				<c:if test="${sessionScope.loginedMemberId > 0}">
+					<div>로그인된 회원의 번호 : ${sessionScope.loginedMemberId}</div>
+				</c:if>
 				<a href="../home/main" class="logo"> <span><i
 						class="fab fa-mailchimp"></i></span></span> <span>Imaginary space</span>
 				</a>
@@ -68,12 +71,7 @@
 							href="${pageContext.request.contextPath}/usr/member/join"
 							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
 									class="far fa-address-card"></i></span> <span>회원가입</span>
-								<ul>
-									<c:if test="${sessionScope.loginedMemberId == null}">
-										<a href="../member/login">로그인</a>
-										<a href="../member/join">회원가입</a>
-									</c:if>
-								</ul>
+
 						</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/usr/member/login"
@@ -124,6 +122,9 @@
 		<aside class="mobile-side-bar visible-sm-down">
 
 			<nav class="mobile-side-bar__menu-box-1">
+				<c:if test="${sessionScope.loginedMemberId > 0}">
+					<div>로그인된 회원의 번호 : ${sessionScope.loginedMemberId}</div>
+				</c:if>
 				<ul>
 					<li><a href="../home/main" class="block"><span><i
 								class="fas fa-home"></i></span> <span>HOME</span></a> </a></li>
