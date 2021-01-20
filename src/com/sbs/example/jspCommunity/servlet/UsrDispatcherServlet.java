@@ -12,7 +12,8 @@ import com.sbs.example.jspCommunity.controller.UsrMemberController;
 @WebServlet("/usr/*")
 public class UsrDispatcherServlet extends DispatcherServlet {
 	@Override
-	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName, String actionMethodName) {
+	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName,
+			String actionMethodName) {
 		String jspPath = null;
 
 		if (controllerName.equals("home")) {
