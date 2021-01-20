@@ -84,20 +84,14 @@
 						<li><a
 							href="${pageContext.request.contextPath}/usr/article/list?boardId=1"
 							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-									class="fas fa-newspaper"></i></span> <span>공지사항 게시물 리스트</span>
+									class="fas fa-newspaper"></i></span> <span>공지사항 게시물 리스트</span> <c:if
+									test="${sessionScope.loginedMemberId > 0}">
+									<a href="../article/write?boardId=1">공지사항 글쓰기</a>
+									<a href="../member/doLogout">로그아웃</a>
+								</c:if>
+						</a></li>
 
-						</a>
-						<ul>
-								<div>
-									<a href="../article/list?boardId=1">공지사항 게시물 리스트</a>
 
-									<c:if test="${sessionScope.loginedMemberId > 0}">
-										<a href="../article/write?boardId=1">공지사항 글쓰기</a>
-										<a href="../member/doLogout">로그아웃</a>
-									</c:if>
-
-								</div>
-							</ul></li>
 					</ul>
 				</nav>
 			</div>
