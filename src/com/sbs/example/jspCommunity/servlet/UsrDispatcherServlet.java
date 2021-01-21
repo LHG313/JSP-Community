@@ -12,8 +12,7 @@ import com.sbs.example.jspCommunity.controller.UsrMemberController;
 @WebServlet("/usr/*")
 public class UsrDispatcherServlet extends DispatcherServlet {
 	@Override
-	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName,
-			String actionMethodName) {
+	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName, String actionMethodName) {
 		String jspPath = null;
 
 		if (controllerName.equals("home")) {
@@ -37,6 +36,8 @@ public class UsrDispatcherServlet extends DispatcherServlet {
 				jspPath = memberController.doLogin(req, resp);
 			} else if (actionMethodName.equals("doLogout")) {
 				jspPath = memberController.doLogout(req, resp);
+			} else if (actionMethodName.equals("getLoginIdDup")) {
+				jspPath = memberController.getLoginIdDup(req, resp);
 			}
 		} else if (controllerName.equals("article")) {
 			UsrArticleController articleController = Container.articleController;

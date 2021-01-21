@@ -61,13 +61,14 @@
 						: ${sessionScope.loginedMemberId}
 					</div>
 				</c:if>
-				<a href="${pageContext.request.contextPath}/home/main" class="logo">
-					<span><i class="fab fa-mailchimp"></i></span></span> <span>Imaginary
+				<a href="${pageContext.request.contextPath}/usr/home/main"
+					class="logo"> <span><i class="fab fa-mailchimp"></i></span></span> <span>Imaginary
 						space</span>
 				</a>
 				<nav class="top-bar__menu-box-1 height-100p">
 					<ul class="flex height-100p">
-						<li><a href="${pageContext.request.contextPath}/home/main"
+						<li><a
+							href="${pageContext.request.contextPath}/usr/home/main"
 							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
 									class="fas fa-home"></i></span> <span>HOME</span>
 						</a></li>
@@ -136,7 +137,7 @@
 					</div>
 				</c:if>
 				<ul>
-					<li><a href="${pageContext.request.contextPath}/home/main"
+					<li><a href="${pageContext.request.contextPath}/usr/home/main"
 						class="block"><span><i class="fas fa-home"></i></span> <span>HOME</span></a>
 						</a></li>
 					<li><a
@@ -147,8 +148,7 @@
 					<li><a
 						href="${pageContext.request.contextPath}/usr/member/login"
 						class="block"> <span><i class="fas fa-sign-in-alt"></i></span>
-							<span>로그인</span>
-						<c:if test="${sessionScope.loginedMemberId > 0}">
+							<span>로그인</span> <c:if test="${sessionScope.loginedMemberId > 0}">
 								<a href="${pageContext.request.contextPath}/adm/member/list"><span><i
 										class="far fa-address-book"></i></span><span>회원정보</span></a>
 								<a href="${pageContext.request.contextPath}/usr/member/doLogout"><span><i
