@@ -95,7 +95,9 @@
 							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
 									class="fas fa-newspaper"></i></span> <span>공지사항 게시물 리스트</span> <c:if
 									test="${sessionScope.loginedMemberId > 0}">
-									<a href="../article/write?boardId=1">공지사항 글쓰기</a></a></li>
+									<a
+										href="${pageContext.request.contextPath}/usr/article/write?boardId=1">공지사항
+										글쓰기</a></a></li>
 						</c:if>
 
 					</ul>
@@ -114,7 +116,8 @@
 				</div>
 			</div>
 			<div>
-				<a href="#" class="logo height-100p"> <span><i
+				<a href="${pageContext.request.contextPath}/usr/home/main"
+					class="logo height-100p"> <span><i
 						class="fab fa-mailchimp"></i></span></span> <span>Imaginary space</span>
 				</a>
 			</div>
@@ -154,7 +157,9 @@
 						href="${pageContext.request.contextPath}/usr/article/list?boardId=1"
 						class="block"> <span><i class="fas fa-newspaper"></i></span> <span>공지사항
 								게시물 리스트</span> <c:if test="${sessionScope.loginedMemberId > 0}">
-								<a href="../article/write?boardId=1">공지사항 글쓰기</a>
+								<a
+									href="${pageContext.request.contextPath}/usr/article/write?boardId=1">공지사항
+									글쓰기</a>
 
 							</c:if>
 					</a></li>
