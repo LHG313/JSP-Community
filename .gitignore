@@ -5,3 +5,4 @@ bin/
 site/
 target/
 .factorypath
+WebContent/META-INF/config.json

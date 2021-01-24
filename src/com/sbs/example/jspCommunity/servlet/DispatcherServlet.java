@@ -1,12 +1,15 @@
 package com.sbs.example.jspCommunity.servlet;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import com.sbs.example.jspCommunity.container.Container;
 import com.sbs.example.jspCommunity.dto.Member;
 import com.sbs.example.mysqlutil.MysqlUtil;
+import com.sbs.example.util.Util;
 
 public abstract class DispatcherServlet extends HttpServlet {
 	@Override
@@ -35,8 +39,7 @@ public abstract class DispatcherServlet extends HttpServlet {
 			return;
 		}
 
-		String jspPath = doAction(req, resp, (String) doBeforeActionRs.get("controllerName"),
-				(String) doBeforeActionRs.get("actionMethodName"));
+		String jspPath = doAction(req, resp, (String) doBeforeActionRs.get("controllerName"), (String) doBeforeActionRs.get("actionMethodName"));
 
 		if (jspPath == null) {
 			resp.getWriter().append("jsp 정보가 없습니다.");
@@ -46,8 +49,7 @@ public abstract class DispatcherServlet extends HttpServlet {
 		doAfterAction(req, resp, jspPath);
 	}
 
-	private Map<String, Object> doBeforeAction(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+	private Map<String, Object> doBeforeAction(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
 
@@ -116,11 +118,9 @@ public abstract class DispatcherServlet extends HttpServlet {
 		return rs;
 	}
 
-	protected abstract String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName,
-			String actionMethodName);
+	protected abstract String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName, String actionMethodName);
 
-	private void doAfterAction(HttpServletRequest req, HttpServletResponse resp, String jspPath)
-			throws ServletException, IOException {
+	private void doAfterAction(HttpServletRequest req, HttpServletResponse resp, String jspPath) throws ServletException, IOException {
 		MysqlUtil.closeConnection();
 
 		RequestDispatcher rd = req.getRequestDispatcher("/jsp/" + jspPath + ".jsp");
