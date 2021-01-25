@@ -89,4 +89,9 @@ public class MemberDao {
 		return new Member(map);
 	}
 
+	public void modify(Map<String, Object> param) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

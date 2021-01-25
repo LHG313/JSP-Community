@@ -81,6 +81,7 @@
 							<li><a
 								href="${pageContext.request.contextPath}/usr/member/findLoginId"><span><i
 										class="fas fa-sign-out-alt"></i></span>로그인아이디 찾기<span></span></a></li>
+										<a href="../member/findLoginPw">로그인비번 찾기</a>
 							<li><a
 								href="${pageContext.request.contextPath}/usr/member/login"
 								class="flex flex-jc-c flex-ai-c height-100p"> <span><i
