@@ -188,13 +188,14 @@ a {
 }
 
 .top-bar__menu-box-1 > ul > li {
-  
+  flex:1 0 0;
+  position: relative;
 }
 
 .top-bar__menu-box-1 > ul > li > a {
+  text-align: center;
   font-weight:bold;
-  padding-left:20px;
-  padding-right:20px;
+  padding: 20px 0;
 }
 
 .top-bar__menu-box-1 > ul > li:hover > a {
