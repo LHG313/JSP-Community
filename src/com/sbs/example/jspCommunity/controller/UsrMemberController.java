@@ -230,14 +230,23 @@ public class UsrMemberController {
 		}
 
 		if (member.getEmail().equals(email) == false) {
-			req.setAttribute("alertMsg", "회원의 이메일주소를 정확히 입력해주세요.");
+			req.setAttribute("alertMsg", "회원이 이메일주소를 정확히 입력해주세요.");
 			req.setAttribute("historyBack", true);
 			return "common/redirect";
 		}
 
-		memberService.sendTempLoginPwToEmail(member);
+		Map<String, Object> sendTempLoginPwToEmailRs = memberService.sendTempLoginPwToEmail(member);
 
-		req.setAttribute("alertMsg", String.format("고객님의 새 임시 패스워드가 %s (으)로 발송되었습니다.", member.getEmail()));
+		String resultCode = (String) sendTempLoginPwToEmailRs.get("resultCode");
+		String resultMsg = (String) sendTempLoginPwToEmailRs.get("msg");
+
+		if (resultCode.startsWith("F-")) {
+			req.setAttribute("alertMsg", resultMsg);
+			req.setAttribute("historyBack", true);
+			return "common/redirect";
+		}
+
+		req.setAttribute("alertMsg", resultMsg);
 		req.setAttribute("replaceUrl", "../member/login");
 		return "common/redirect";
 	}
