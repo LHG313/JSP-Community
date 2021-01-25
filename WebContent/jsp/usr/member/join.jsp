@@ -7,7 +7,6 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
-
 <h1>${pageTitle}</h1>
 
 <div>
@@ -30,8 +29,8 @@
 					alert(data.msg);
 				}
 			
-				if ( data.resultCode.substr(0, 2) == "S-" ) {
-					DoJoinForm__checkedLoginId = data.loginId;
+				if ( data.success ) {
+					DoJoinForm__checkedLoginId = data.body.loginId;
 				}
 			},
 			"json"
@@ -121,10 +120,10 @@
 			
 			return;
 		}
-
-		form.loginPwReal.value =sha256(form.loginPw.value);
-		form.loginPw.value ="";
-		form.loginPwConfirm.value ="";
+		
+		form.loginPwReal.value = sha256(form.loginPw.value);
+		form.loginPw.value = "";
+		form.loginPwConfirm.value = "";
 		
 		form.submit();
 		DoJoinForm__submited = true;
@@ -133,7 +132,6 @@
 	<form action="doJoin" method="POST"
 		onsubmit="DoJoinForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
-
 		<hr />
 		<div>
 			<div>로그인 아이디</div>
