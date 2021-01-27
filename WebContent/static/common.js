@@ -1,24 +1,3 @@
-console.clear();
-function MobileTopBar__init() {
-  $('.mobile-top-bar__btn-toggle-side-bar').click(function() {
-    let $this = $(this);
-    
-    if ( $this.hasClass('active') ) {
-      $this.removeClass('active');
-      $('.mobile-side-bar').removeClass('active');
-    }
-    else {
-      $this.addClass('active');
-      $('.mobile-side-bar').addClass('active');
-    }
-  });
-}
-
-MobileTopBar__init();
-
-
-/* 토스트 UI 시작 */
-
 // 유튜브 플러그인 시작
 function youtubePlugin() {
   toastui.Editor.codeBlockManager.setReplacer('youtube', youtubeId => {
@@ -53,7 +32,7 @@ function codepenPlugin() {
 
 function renderCodepen(wrapperId, url) {
   const el = document.querySelector(`#${wrapperId}`);
-
+  
   var urlParams = new URLSearchParams(url.split('?')[1]);
   var height = urlParams.get('height');
 
@@ -64,7 +43,7 @@ function renderCodepen(wrapperId, url) {
 function Editor__init() {
   $('.toast-ui-editor').each(function(index, node) {
     var initialValue = $(node).prev().html().trim().replace(/t-script/gi, 'script');
-
+    
     var editor = new toastui.Editor({
       el: node,
       previewStyle: 'vertical',
@@ -72,12 +51,10 @@ function Editor__init() {
       height:600,
       plugins: [toastui.Editor.plugin.codeSyntaxHighlight, youtubePlugin, codepenPlugin]
     });
+
+	$(node).data('data-toast-editor', editor);
   });
 }
-
-$(function() {
-  Editor__init();
-});
 
 function EditorViewer__init() {
   $('.toast-ui-viewer').each(function(index, node) {
@@ -91,8 +68,5 @@ function EditorViewer__init() {
   });
 }
 
-$(function() {
-  EditorViewer__init();
-});
-
-/* 토스트 UI 끝 */
+EditorViewer__init();
+Editor__init();
