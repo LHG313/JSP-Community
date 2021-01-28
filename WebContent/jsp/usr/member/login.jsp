@@ -3,47 +3,47 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="pageTitle" value="로그인" />
 <%@ include file="../../part/head.jspf"%>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
 <h1>${pageTitle}</h1>
 
 <div>
 	<script>
-		let DoLoginForm__submited = false;
-		function DoLoginForm__submit(form) {
-			if (DoLoginForm__submited) {
-				alert('처리중입니다.');
-				return;
-			}
-
-			form.loginId.value = form.loginId.value.trim();
-
-			if (form.loginId.value.length == 0) {
-				alert('로그인 아이디를 입력해주세요.');
-				form.loginId.focus();
-
-				return;
-			}
-
-			form.loginPw.value = form.loginPw.value.trim();
-
-			if (form.loginPw.value.length == 0) {
-				alert('로그인 비밀번호를 입력해주세요.');
-				form.loginPw.focus();
-
-				return;
-			}
-			form.loginPwReal.value = sha256(form.loginPw.value);
-			form.loginPw.value = "";
-
-			form.submit();
-			DoLoginForm__submited = true;
+	let DoLoginForm__submited = false;
+	function DoLoginForm__submit(form) {
+		if ( DoLoginForm__submited ) {
+			alert('처리중입니다.');
+			return;
 		}
+	
+		form.loginId.value = form.loginId.value.trim();
+	
+		if ( form.loginId.value.length == 0 ) {
+			alert('로그인 아이디를 입력해주세요.');
+			form.loginId.focus();
+			
+			return;
+		}
+		
+		form.loginPw.value = form.loginPw.value.trim();
+	
+		if ( form.loginPw.value.length == 0 ) {
+			alert('로그인 비밀번호를 입력해주세요.');
+			form.loginPw.focus();
+			
+			return;
+		}
+		
+		form.loginPwReal.value = sha256(form.loginPw.value);
+		
+		form.loginPw.value = "";
+		
+		form.submit();
+		DoLoginForm__submited = true;
+	}
 	</script>
-	<form action="doLogin" method="POST"
-		onsubmit="DoLoginForm__submit(this); return false;">
+	<form action="doLogin" method="POST" onsubmit="DoLoginForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
 		<hr />
 		<div>
@@ -63,7 +63,7 @@
 					placeholder="로그인 비밀버호를 입력해주세요." />
 			</div>
 		</div>
-
+		
 		<hr />
 
 		<div>

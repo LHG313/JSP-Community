@@ -27,10 +27,9 @@
 				return;
 			}
 
-			form.loginPw.value = form.loginPw.value.trim();
 
-			if (form.loginPw.value.length == 0) {
-				alert('로그인 비밀번호를 입력해주세요.');
+			if (form.loginPw.value == form.loginPwReal.value) {
+				alert('비밀번호를 바꿔주시길 바랍니다.');
 				form.loginPw.focus();
 
 				return;
