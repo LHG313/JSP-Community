@@ -93,6 +93,7 @@
 						<c:if test="${isLogined}">
 							<a href="${pageContext.request.contextPath}/usr/member/doLogout"><span><i
 									class="fas fa-sign-out-alt"></i></span>로그아웃<span></span></a>
+									<a href="../member/modify">회원정보수정</a>
 						</c:if>
 
 						</a>
