@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!doctype html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-
+<title>${pageTitle }</title>
 
 <!-- 반응형 필수 -->
-<meta name="viewport" content="width=device-width, user-scalable=no" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 제이쿼리 불러오기 -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <!-- 폰트어썸 불러오기 -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -42,79 +41,66 @@
 	defer></script>
 <!-- 토스트 UI 끝 -->
 
-
-<title>${pageTitle}</title>
-<!-- css 경로 -->
-
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/static/common.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/common.css" />
 <script src="${pageContext.request.contextPath}/static/common.js" defer></script>
 </head>
-
 <body>
 	<div class="body-content">
-		<!-- 탑바 시작 -->
+
 		<header class="top-bar con-min-width visible-md-up">
-			<div class="con height-100p flex flex-jc-sb">
-				<c:if test="${isLogined}">
-					<div>
-						<span><i class="fas fa-user"></i></span> <span>로그인된 회원의 닉네임</span>
-						: ${loginedMember.nickname}
-					</div>
-				</c:if>
-				<a href="${pageContext.request.contextPath}/usr/home/main"
-					class="logo"> <span><i class="fab fa-mailchimp"></i></span> <span>Imaginary
-						space</span>
+			<div class="con flex height-100p">
+				<a href="../home/main" class="logo  flex flex-ai-c"> <span><i
+						class="fas fa-landmark"></i></span> <span>HISTORY</span>
 				</a>
-				<nav class="top-bar__menu-box-1 height-100p">
+
+				<div class="flex-grow-1"></div>
+
+				<nav class="top-bar__menu-box-1 visible-md-up">
 					<ul class="flex height-100p">
-						<li><a
-							href="${pageContext.request.contextPath}/usr/home/main"
-							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-									class="fas fa-home"></i></span> <span>HOME</span>
+						<li><a href="../home/main" class="flex flex-ai-c height-100p">
+								<span> <i class="fas fa-home"></i></span><span>HOME</span>
 						</a></li>
 						<c:if test="${isLogined == false}">
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/join"
-								class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-										class="far fa-address-card"></i></span> <span>회원가입</span>
+							<li><a href="../member/login"
+								class="flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-in-alt"></i></span><span>로그인</span>
 							</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/findLoginId"><span><i
-										class="fas fa-sign-out-alt"></i></span>로그인아이디 찾기<span></span></a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/findLoginPw">로그인비번
-									찾기</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/login"
-								class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-										class="fas fa-sign-in-alt"></i></span> <span>로그인</span>
+							<li><a href="../member/join"
+								class="flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-in-alt"></i></span><span>회원가입</span>
+							</a></li>
+							<li><a href="../member/findLoginId"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="far fa-address-card"></i></span><span>아이디 찾기</span>
+							</a></li>
+							<li><a href="../member/findLoginPw"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-key"></i></span><span>비밀번호 찾기</span>
+							</a></li>
 						</c:if>
 						<c:if test="${isLogined}">
-							<a href="${pageContext.request.contextPath}/usr/member/doLogout"><span><i
-									class="fas fa-sign-out-alt"></i></span>로그아웃<span></span></a>
-									<a href="../member/modify">회원정보수정</a>
+							<li><a href="../article/write?boardId=1"
+								class=" flex
+								flex-ai-c height-100p"> <span>
+										<i class="fas fa-plus"></i>
+								</span><span>공지사항 글쓰기</span>
+							</a></li>
+							<li><a href="../member/modify"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-user-edit"></i></span><span>회원정보 수정</span>
+							</a></li>
+							<li><a href="../member/doLogout"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-out-alt"></i></span><span>로그아웃</span>
+							</a></li>
 						</c:if>
-
-						</a>
-						</li>
-						<li><a
-							href="${pageContext.request.contextPath}/usr/article/list?boardId=1"
-							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-									class="fas fa-newspaper"></i></span> <span>공지사항 게시물 리스트</span> <c:if
-									test="${isLogined}">
-									<a
-										href="${pageContext.request.contextPath}/usr/article/write?boardId=1">공지사항
-										글쓰기</a></a></li>
-						</c:if>
-
 					</ul>
 				</nav>
 			</div>
 		</header>
-		<!-- 탑바 끝 -->
 
-		<!-- 모바일 탑바 시작 -->
+	<!-- 모바일 탑바 시작 -->
 		<header class="mobile-top-bar con-min-width visible-sm-down flex">
 			<div class="flex-1-0-0 flex">
 				<div class="mobile-top-bar__btn-toggle-side-bar flex-as-c">
@@ -124,9 +110,8 @@
 				</div>
 			</div>
 			<div>
-				<a href="${pageContext.request.contextPath}/usr/home/main"
-					class="logo height-100p"> <span><i
-						class="fab fa-mailchimp"></i></span></span> <span>Imaginary space</span>
+				<a href="../home/main" class="logo  flex flex-ai-c"> <span><i
+						class="fas fa-landmark"></i></span> <span>HISTORY</span>
 				</a>
 			</div>
 			<div class="flex-1-0-0"></div>
@@ -149,46 +134,45 @@
 				</a>
 				<nav class="top-bar__menu-box-1 height-100p">
 					<ul class="flex height-100p">
-						<li><a
-							href="${pageContext.request.contextPath}/usr/home/main"
-							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-									class="fas fa-home"></i></span> <span>HOME</span>
+					<li><a href="../home/main" class="flex flex-ai-c height-100p">
+								<span> <i class="fas fa-home"></i></span><span>HOME</span>
 						</a></li>
 						<c:if test="${isLogined == false}">
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/join"
-								class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-										class="far fa-address-card"></i></span> <span>회원가입</span>
+							<li><a href="../member/login"
+								class="flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-in-alt"></i></span><span>로그인</span>
 							</a></li>
-
-							<li><a
-								href="${pageContext.request.contextPath}/usr/member/login"
-								class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-										class="fas fa-sign-in-alt"></i></span> <span>로그인</span>
+							<li><a href="../member/join"
+								class="flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-in-alt"></i></span><span>회원가입</span>
+							</a></li>
+							<li><a href="../member/findLoginId"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="far fa-address-card"></i></span><span>아이디 찾기</span>
+							</a></li>
+							<li><a href="../member/findLoginPw"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-key"></i></span><span>비밀번호 찾기</span>
+							</a></li>
 						</c:if>
 						<c:if test="${isLogined}">
-							<a href="${pageContext.request.contextPath}/adm/member/list"><span><i
-									class="far fa-address-book"></i></span><span>회원정보</span></a>
-							<a href="${pageContext.request.contextPath}/usr/member/doLogout"><span><i
-									class="fas fa-sign-out-alt"></i></span>로그아웃<span></span></a>
+							<li><a href="../article/write?boardId=1"
+								class=" flex
+								flex-ai-c height-100p"> <span>
+										<i class="fas fa-plus"></i>
+								</span><span>공지사항 글쓰기</span>
+							</a></li>
+							<li><a href="../member/modify"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-user-edit"></i></span><span>회원정보 수정</span>
+							</a></li>
+							<li><a href="../member/doLogout"
+								class=" flex flex-ai-c height-100p"> <span> <i
+										class="fas fa-sign-out-alt"></i></span><span>로그아웃</span>
+							</a></li>
 						</c:if>
-
-						</a>
-						</li>
-						<li><a
-							href="${pageContext.request.contextPath}/usr/article/list?boardId=1"
-							class="flex flex-jc-c flex-ai-c height-100p"> <span><i
-									class="fas fa-newspaper"></i></span> <span>공지사항 게시물 리스트</span> <c:if
-									test="${isLogined}">
-									<a
-										href="${pageContext.request.contextPath}/usr/article/write?boardId=1">공지사항
-										글쓰기</a></a></li>
-						</c:if>
-						</a>
-						</li>
 					</ul>
 				</nav>
 		</aside>
 		<!-- 모바일 사이드 바 끝 -->
-
-		<main class="con">
+		<main>

@@ -17,28 +17,19 @@
 				alert('처리중입니다.');
 				return;
 			}
-
 			form.loginPw.value = form.loginPw.value.trim();
-
 			if (form.loginPw.value.length == 0) {
 				alert('로그인 아이디를 입력해주세요.');
 				form.loginPw.focus();
-
 				return;
 			}
-
-
 			if (form.loginPw.value == form.loginPwReal.value) {
 				alert('비밀번호를 바꿔주시길 바랍니다.');
 				form.loginPw.focus();
-
 				return;
 			}
-
 			form.loginPwReal.value = sha256(form.loginPw.value);
-
 			form.loginPw.value = "";
-
 			form.submit();
 			DoFindLoginPwForm__submited = true;
 		}
