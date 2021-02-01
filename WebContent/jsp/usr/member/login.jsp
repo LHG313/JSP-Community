@@ -67,7 +67,7 @@
 			<div>로그인 비번</div>
 			<div>
 				<input name="loginPw" type="password" maxlength="50"
-					placeholder="로그인 비밀버호를 입력해주세요." />
+					placeholder="로그인 비밀번호를 입력해주세요." />
 			</div>
 		</div>
 

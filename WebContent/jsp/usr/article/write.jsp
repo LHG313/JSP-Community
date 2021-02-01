@@ -3,8 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="pageTitle" value="${board.name} 게시물 작성" />
 <%@ include file="../../part/head.jspf"%>
-<h1>${pageTitle}</h1>
 
+<div class="title-bar padding-0-10 con-min-width">
+	<h1 class="con">
+		<span><i class="far fa-paper-plane"></i></span><span>${pageTitle}</span>
+	</h1>
+</div>
 <div>
 	<script>
 		let DoWriteForm__submited = false;
@@ -60,9 +64,9 @@
 		<hr />
 		<div>
 			<div>작성</div>
-			<div>
-				<input type="submit" value="작성" />
-				<button type="button" onclick="history.back();">뒤로가기</button>
+			<div class="btn-wrap">
+				<button type="submit" value="작성" class="btn btn-success" href="#">작성</button>
+				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
 			</div>
 		</div>
 	</form>

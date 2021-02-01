@@ -4,14 +4,12 @@
 
 <c:set var="pageTitle" value="${board.name} 게시물 리스트" />
 <%@ include file="../../part/head.jspf"%>
-<h1>${pageTitle}</h1>
 
-<hr />
-
-<div>
-	<a href="write?boardId=${param.boardId}">게시물 작성</a>
+<div class="title-bar padding-0-10 con-min-width">
+	<h1 class="con">
+		<span><i class="far fa-list-alt"></i></span><span>${pageTitle}</span>
+	</h1>
 </div>
-
 <hr />
 
 <div>
@@ -108,5 +106,12 @@
 <hr />
 <hr />
 <hr />
+
+<div class="article-btn-box padding-0-10 con-min-width">
+	<div class="con btn-wrap">
+		<a class="btn btn-primary" href="write?boardId=${param.boardId}">WRITE</a>
+		<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
+	</div>
+</div>
 
 <%@ include file="../../part/foot.jspf"%>

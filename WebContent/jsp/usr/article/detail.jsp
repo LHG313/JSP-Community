@@ -4,7 +4,12 @@
 
 <c:set var="pageTitle" value="${article.extra__boardName} 게시물 상세페이지" />
 <%@ include file="../../part/head.jspf"%>
-<h1>${pageTitle}</h1>
+
+<div class="title-bar padding-0-10 con-min-width">
+	<h1 class="con">
+		<span><i class="fas fa-search-plus"></i></span><span>${pageTitle}</span>
+	</h1>
+</div>
 
 <div>
 	번호 : ${article.id} <br /> 작성날짜 : ${article.regDate} <br /> 갱신날짜 :

@@ -68,7 +68,7 @@
 							</a></li>
 							<li><a href="../member/join"
 								class="flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-sign-in-alt"></i></span><span>회원가입</span>
+										class="far fa-hand-pointer"></i></span><span>회원가입</span>
 							</a></li>
 							<li><a href="../member/findLoginId"
 								class=" flex flex-ai-c height-100p"> <span> <i
@@ -83,7 +83,7 @@
 							<li><a href="../article/write?boardId=1"
 								class=" flex
 								flex-ai-c height-100p"> <span>
-										<i class="fas fa-plus"></i>
+										<i class="far fa-paper-plane"></i>
 								</span><span>공지사항 글쓰기</span>
 							</a></li>
 							<li><a href="../member/modify"
@@ -100,7 +100,7 @@
 			</div>
 		</header>
 
-	<!-- 모바일 탑바 시작 -->
+		<!-- 모바일 탑바 시작 -->
 		<header class="mobile-top-bar con-min-width visible-sm-down flex">
 			<div class="flex-1-0-0 flex">
 				<div class="mobile-top-bar__btn-toggle-side-bar flex-as-c">
@@ -134,7 +134,7 @@
 				</a>
 				<nav class="top-bar__menu-box-1 height-100p">
 					<ul class="flex height-100p">
-					<li><a href="../home/main" class="flex flex-ai-c height-100p">
+						<li><a href="../home/main" class="flex flex-ai-c height-100p">
 								<span> <i class="fas fa-home"></i></span><span>HOME</span>
 						</a></li>
 						<c:if test="${isLogined == false}">

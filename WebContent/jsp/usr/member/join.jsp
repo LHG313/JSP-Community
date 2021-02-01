@@ -7,8 +7,11 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
-<h1>${pageTitle}</h1>
-
+<div class="title-bar padding-0-10 con-min-width">
+	<h1 class="con">
+		<span><i class="far fa-hand-pointer"></i></span><span>${pageTitle}</span>
+	</h1>
+</div>
 <div>
 	<script>
 	let DoJoinForm__submited = false;
@@ -208,9 +211,9 @@
 
 		<div>
 			<div>가입</div>
-			<div>
-				<input type="submit" value="가입" />
-				<button type="button" onclick="history.back();">뒤로가기</button>
+			<div class="btn-wrap">
+				<button type="submit" value="가입" class="btn btn-success" href="#">가입</button>
+				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
 			</div>
 		</div>
 	</form>

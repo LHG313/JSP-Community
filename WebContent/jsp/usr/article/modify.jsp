@@ -4,8 +4,12 @@
 
 <c:set var="pageTitle" value="${board.name} 게시물 수정" />
 <%@ include file="../../part/head.jspf"%>
-<h1>${pageTitle}</h1>
 
+<div class="title-bar padding-0-10 con-min-width">
+	<h1 class="con">
+		<span><i class="fas fa-pencil-alt"></i></span><span>${pageTitle}</span>
+	</h1>
+</div>
 <div>
 	<script>
 		let DoModifyForm__submited = false;
@@ -61,9 +65,9 @@
 		<hr />
 		<div>
 			<div>수정</div>
-			<div>
-				<input type="submit" value="수정" />
-				<button type="button" onclick="history.back();">뒤로가기</button>
+			<div class="btn-wrap">
+				<button type="submit" value="수정" class="btn btn-success" href="#">수정</button>
+				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
 			</div>
 		</div>
 	</form>
