@@ -55,14 +55,58 @@
 
 <hr />
 
-<c:forEach items="${articles}" var="article">
-	<div>
-		번호 : ${article.id} <br /> 작성날짜 : ${article.regDate} <br /> 갱신날짜 :
-		${article.updateDate} <br /> 작성자 : ${article.extra__writer} <br />
-		제목 : <a href="detail?id=${article.id}">${article.title}</a>
-		<hr />
+<div class="article-list-box padding-0-10 con-min-width">
+		<div class="con">
+			<table>
+				<colgroup>
+					<col width="100">
+					<col width="200">
+					<col width="150">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>날짜</th>
+						<th>작성자</th>
+						<th>제목</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+				<c:forEach var="article" items="${articles}">
+					<tr>
+						<td><span class="article-list-box__id">${article.getId()}</span></td>
+						<td><span class="article-list-box__reg-date">
+								${article.getRegDate()} </span></td>
+						<td><span class="article-list-box__writer"> ${article.getExtra__writer()} </span></td>
+						<td><a href="detail?articleId=${article.id}" class="article-list-box__title hover-link">
+								${article.getTitle()} </a></td>
+						<td class="visible-sm-down">
+							<div class="flex">
+								<span class="article-list-box__id article-list-box__id--mobile">${article.getId()}</span>
+
+								<a href="detail?articleId=${article.id}"
+									class="article-list-box__title article-list-box__title--mobile flex-grow-1 hover-link">
+									${article.getTitle()}
+									
+									</a>
+							</div>
+	
+								<div class="flex">
+									<span
+										class="article-list-box__writer article-list-box__writer--mobile">${article.getExtra__writer()}</span>
+									<span>|</span> <span
+										class="article-list-box__reg-date article-list-box__reg-date--mobile">
+										${article.regDate}
+										</span>
+							</div>
+						</td>
+					</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</c:forEach>
 
 <style>
 .red {
