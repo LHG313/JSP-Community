@@ -217,9 +217,7 @@ a {
 }
 
 .mobile-top-bar {
-  background-image:
-		url('https://images.unsplash.com/photo-1584283667412-ec6bf3c82688');
-	background-size: auto 100px;
+ background-color:#ffc0cb;
   color:black;
   height:var(--mobile-top-bar__height);
   position:fixed;
@@ -234,11 +232,16 @@ a {
 }
 
 .mobile-top-bar__btn-toggle-side-bar {
+  margin-top:5px;
   width:25px;
   height:25px;
   position:relative;
   margin-left:10px;
   cursor:pointer;
+}
+
+.logo> span:nth-child(1){
+  margin-left: 5px;
 }
 
 .mobile-top-bar__btn-toggle-side-bar > div {
@@ -283,8 +286,7 @@ a {
   width:100%;
   bottom:0;
   color:black;
-  background-color:#6495ED;
-  transition:left .3s;
+   background-color:#ffc0cb;
   display:flex;
   align-items:center;
   padding-bottom:var(--mobile-top-bar__height);
@@ -307,7 +309,7 @@ a {
 
 .mobile-side-bar__menu-box-1 > ul > li:hover > a {
   background-color:white;
-  color:#6495ED;
+  color:#ffc0cb;
 }
 /* 모바일 사이드바 끝 */
 

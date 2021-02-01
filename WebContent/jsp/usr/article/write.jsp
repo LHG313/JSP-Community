@@ -63,7 +63,7 @@
 		</div>
 		<hr />
 		<div>
-			<div>작성</div>
+
 			<div class="btn-wrap">
 				<button type="submit" value="작성" class="btn btn-success" href="#">작성</button>
 				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>

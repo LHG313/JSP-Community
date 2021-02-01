@@ -12,7 +12,7 @@ CREATE TABLE `member` (
     `email` VARCHAR(100) NOT NULL,
     loginId CHAR(50) NOT NULL UNIQUE,
     loginPw VARCHAR(200) NOT NULL,
-    authLevel TINYINT(1) UNSIGNED NOT NULL DEFAULT 2 COMMENT '0=탈퇴/1=로그인정지/2=일반/3=인증된,4=관리자'
+    adminLevel TINYINT(1) UNSIGNED NOT NULL DEFAULT 2 COMMENT '0=탈퇴/1=로그인정지/2=일반/3=인증된,4=관리자'
 );
 
 # 회원1 생성
@@ -119,11 +119,37 @@ title = '제목5',
 `body` = '내용5';
 
 # cellphoneNo 추가 및 칼럼 순서 재정렬
-ALTER TABLE `member` CHANGE `loginId` `loginId` CHAR(50)  NOT NULL AFTER `updateDate`,
+ALTER TABLE `member` CHANGE `loginId` `loginId` CHAR(50) NOT NULL AFTER `updateDate`,
                      CHANGE `loginPw` `loginPw` VARCHAR(200) NOT NULL AFTER `loginId`,
-                     ADD COLUMN `cellphoneNo` CHAR(20) NOT NULL AFTER `email`; 
-
+                     ADD COLUMN `cellphoneNo` CHAR(20) NOT NULL AFTER `email`;
+                     
+# adminLevel을 authLevel로 변경
+ALTER TABLE `member` CHANGE `adminLevel` `authLevel` TINYINT(1) UNSIGNED DEFAULT 2 NOT NULL COMMENT '0=탈퇴/1=로그인정지/2=일반/3=인증된,4=관리자'; 
 
 # 기존회원의 비번을 암호화
 UPDATE `member`
 SET loginPw = SHA2(loginPw, 256);
+
+# 부가정보테이블 
+# 댓글 테이블 추가
+CREATE TABLE attr (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    `relTypeCode` CHAR(20) NOT NULL,
+    `relId` INT(10) UNSIGNED NOT NULL,
+    `typeCode` CHAR(30) NOT NULL,
+    `type2Code` CHAR(30) NOT NULL,
+    `value` TEXT NOT NULL
+);
+
+# attr 유니크 인덱스 걸기
+## 중복변수 생성금지
+## 변수찾는 속도 최적화
+ALTER TABLE `attr` ADD UNIQUE INDEX (`relTypeCode`, `relId`, `typeCode`, `type2Code`); 
+
+## 특정 조건을 만족하는 회원 또는 게시물(기타 데이터)를 빠르게 찾기 위해서
+ALTER TABLE `attr` ADD INDEX (`relTypeCode`, `typeCode`, `type2Code`);
+
+# attr에 만료날짜 추가
+ALTER TABLE `attr` ADD COLUMN `expireDate` DATETIME NULL AFTER `value`;

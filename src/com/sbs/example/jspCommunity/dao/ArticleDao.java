@@ -1,4 +1,3 @@
-
 package com.sbs.example.jspCommunity.dao;
 
 import java.util.ArrayList;
@@ -39,8 +38,8 @@ public class ArticleDao {
 		}
 
 		sql.append("ORDER BY A.id DESC");
-
-		if (limitCount != -1) {
+		
+		if ( limitCount != -1 ) {
 			sql.append("LIMIT ?, ?", limitStart, limitCount);
 		}
 

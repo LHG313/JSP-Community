@@ -3,6 +3,7 @@ package com.sbs.example.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.util.Date;
 import java.util.Map;
@@ -120,19 +121,40 @@ public class Util {
 		if (value instanceof Integer) {
 			return (int) value;
 		} else if (value instanceof Long) {
-			return Long.valueOf((int) value).intValue();
+			return Long.valueOf((long) value).intValue();
 		} else if (value instanceof Float) {
-			return Float.valueOf((int) value).intValue();
+			return Float.valueOf((float) value).intValue();
 		} else if (value instanceof Double) {
 			return Double.valueOf((double) value).intValue();
 		} else if (value instanceof String) {
 			try {
 				return Integer.parseInt((String) value);
 			} catch (NumberFormatException e) {
-
 			}
 		}
+
 		return defaultValue;
 	}
 
+	public static boolean isEmpty(Object obj) {
+		if (obj == null) {
+			return true;
+		}
+
+		if (obj instanceof String) {
+			if (((String) obj).trim().length() == 0) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public static String getUrlEncoded(String url) {
+		try {
+			return URLEncoder.encode(url, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			return url;
+		}
+	}
 }

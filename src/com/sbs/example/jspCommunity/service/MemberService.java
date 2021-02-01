@@ -15,10 +15,12 @@ public class MemberService {
 
 	private MemberDao memberDao;
 	private EmailService emailService;
+	private AttrService attrService;
 
 	public MemberService() {
 		memberDao = Container.memberDao;
 		emailService = Container.emailService;
+		attrService = Container.attrService;
 	}
 
 	public List<Member> getForPrintMembers() {
@@ -70,6 +72,16 @@ public class MemberService {
 		modifyParam.put("id", actor.getId());
 		modifyParam.put("loginPw", Util.sha256(tempPassword));
 		modify(modifyParam);
+
+		setIsUsingTempPassword(actor.getId(), true);
+	}
+
+	public void setIsUsingTempPassword(int actorId, boolean use) {
+		attrService.setValue("member__" + actorId + "__extra__isUsingTempPassword", use, null);
+	}
+
+	public boolean getIsUsingTempPassword(int actorId) {
+		return attrService.getValueAsBoolean("member__" + actorId + "__extra__isUsingTempPassword");
 	}
 
 	public void modify(Map<String, Object> param) {
