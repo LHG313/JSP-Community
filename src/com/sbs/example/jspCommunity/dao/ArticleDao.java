@@ -98,7 +98,6 @@ public class ArticleDao {
 		sql.append(", memberId = ?", args.get("memberId"));
 		sql.append(", title = ?", args.get("title"));
 		sql.append(", `body` = ?", args.get("body"));
-
 		return MysqlUtil.insert(sql);
 	}
 
