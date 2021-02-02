@@ -61,7 +61,7 @@ public abstract class DispatcherServlet extends HttpServlet {
 			return null;
 		}
 
-		MysqlUtil.setDBInfo("127.0.0.1", "root", "", "jspCommunity");
+		MysqlUtil.setDBInfo("127.0.0.1", "sbsst", "sbs123414", "jspCommunity");
 
 		String controllerTypeName = requestUriBits[2];
 		String controllerName = requestUriBits[3];

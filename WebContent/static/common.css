@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @charset "UTF-8";
 /* 폰트적용 시작 */
 @font-face {
@@ -202,117 +203,118 @@ a {
 	margin-bottom: 20px;
 }
 
-.title-bar > .con > span:nth-child(2) {
-	margin-left:5px;
+.title-bar>.con>span:nth-child(2) {
+	margin-left: 5px;
 }
 /* 타이틀 끝 */
 
 /* 모바일 탑바 시작 */
-:root {
-  --mobile-top-bar__height:100px;
+:root { -
+	-mobile-top-bar__height: 100px;
 }
 
 .mobile-top-bar-padding {
-  padding-top:var(--mobile-top-bar__height);
+	padding-top: var(- -mobile-top-bar__height);
 }
 
 .mobile-top-bar {
- background-color:#ffc0cb;
-  color:black;
-  height:var(--mobile-top-bar__height);
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
+	background-color: #ffc0cb;
+	color: black;
+	height: var(- -mobile-top-bar__height);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
 }
 
-:root {
-  --mobile-top-bar__btn-toggle-side-bar__dur:.3s;
+:root { -
+	-mobile-top-bar__btn-toggle-side-bar__dur: .3s;
 }
 
 .mobile-top-bar__btn-toggle-side-bar {
-  margin-top:5px;
-  width:25px;
-  height:25px;
-  position:relative;
-  margin-left:10px;
-  cursor:pointer;
+	margin-top: 5px;
+	width: 25px;
+	height: 25px;
+	position: relative;
+	margin-left: 10px;
+	cursor: pointer;
 }
 
-.logo> span:nth-child(1){
-  margin-left: 5px;
+.logo>span:nth-child(1) {
+	margin-left: 5px;
 }
 
-.mobile-top-bar__btn-toggle-side-bar > div {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:20%;
-  background-color:black;
-  transition: top var(--mobile-top-bar__btn-toggle-side-bar__dur), transform var(--mobile-top-bar__btn-toggle-side-bar__dur), opacity var(--mobile-top-bar__btn-toggle-side-bar__dur);
-  border-radius:2px;
+.mobile-top-bar__btn-toggle-side-bar>div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20%;
+	background-color: black;
+	transition: top var(- -mobile-top-bar__btn-toggle-side-bar__dur),
+		transform var(- -mobile-top-bar__btn-toggle-side-bar__dur), opacity
+		var(- -mobile-top-bar__btn-toggle-side-bar__dur);
+	border-radius: 2px;
 }
 
-.mobile-top-bar__btn-toggle-side-bar > div:nth-child(2) {
-  top:40%;
+.mobile-top-bar__btn-toggle-side-bar>div:nth-child(2) {
+	top: 40%;
 }
 
-.mobile-top-bar__btn-toggle-side-bar > div:nth-child(3) {
-  top:80%;
+.mobile-top-bar__btn-toggle-side-bar>div:nth-child(3) {
+	top: 80%;
 }
 
-.mobile-top-bar__btn-toggle-side-bar.active > div:nth-child(1),
-.mobile-top-bar__btn-toggle-side-bar.active > div:nth-child(3) {
-  top:40%;
-  transform:rotate(-45deg);
+.mobile-top-bar__btn-toggle-side-bar.active>div:nth-child(1),
+	.mobile-top-bar__btn-toggle-side-bar.active>div:nth-child(3) {
+	top: 40%;
+	transform: rotate(-45deg);
 }
 
-.mobile-top-bar__btn-toggle-side-bar.active > div:nth-child(3) {
-  transform:rotate(45deg);
+.mobile-top-bar__btn-toggle-side-bar.active>div:nth-child(3) {
+	transform: rotate(45deg);
 }
 
-.mobile-top-bar__btn-toggle-side-bar.active > div:nth-child(2) {
-  opacity:0;
+.mobile-top-bar__btn-toggle-side-bar.active>div:nth-child(2) {
+	opacity: 0;
 }
 /* 모바일 탑바 끝 */
 
 /* 모바일 사이드바 시작 */
 .mobile-side-bar {
-  position:fixed;
-  top:var(--mobile-top-bar__height);
-  left:-100%;
-  width:100%;
-  bottom:0;
-  color:black;
-   background-color:#ffc0cb;
-  display:flex;
-  align-items:center;
-  padding-bottom:var(--mobile-top-bar__height);
-  z-index:1000;
+	position: fixed;
+	top: var(- -mobile-top-bar__height);
+	left: -100%;
+	width: 100%;
+	bottom: 0;
+	color: black;
+	background-color: #ffc0cb;
+	display: flex;
+	align-items: center;
+	padding-bottom: var(- -mobile-top-bar__height);
+	z-index: 1000;
 }
 
 .mobile-side-bar.active {
-  left:0;
+	left: 0;
 }
 
 .mobile-side-bar__menu-box-1 {
-  width:100%;
+	width: 100%;
 }
 
-.mobile-side-bar__menu-box-1 > ul > li > a {
-  padding:15px;
-  text-align:center;
-  font-size:1.3rem;
+.mobile-side-bar__menu-box-1>ul>li>a {
+	padding: 15px;
+	text-align: center;
+	font-size: 1.3rem;
 }
 
-.mobile-side-bar__menu-box-1 > ul > li:hover > a {
-  background-color:white;
-  color:#ffc0cb;
+.mobile-side-bar__menu-box-1>ul>li:hover>a {
+	background-color: white;
+	color: #ffc0cb;
 }
 /* 모바일 사이드바 끝 */
-
 
 /* 하단바 시작 */
 .bottom-bar {
@@ -360,8 +362,8 @@ a {
 
 /*게시물 리스트 박스- MOBILE 시작 */
 @media ( max-width :800px) {
-	.article-list-box>.con>table>thead, .article-list-box>.con>table>tbody>tr>td:not(.visible-sm-down)
-		{
+	.article-list-box>.con>table>thead, .article-list-box>.con>table>tbody>tr>td:not
+		(.visible-sm-down ) {
 		display: none;
 	}
 	.article-list-box>.con>table>tbody>tr {
@@ -462,6 +464,200 @@ a {
 	}
 }
 /* 버튼랩 끝 */
+
+/* 로그인 구성 시작 */
+.signUp {
+	position: relative;
+	margin: 50px auto;
+	width: 280px;
+	padding: 33px 25px 29px;
+	background: #FFFFFF;
+	border-bottom: 1px solid #C4C4C4;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.signUp:before, .signUp:after {
+	content: '';
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+	right: 0;
+	height: 10px;
+	background: inherit;
+	border-bottom: 1px solid #D2D2D2;
+	border-radius: 4px;
+}
+
+.signUp:after {
+	bottom: 3px;
+	border-color: #DCDCDC;
+}
+
+.signUpTitle {
+	margin: -25px -25px 25px;
+	padding: 15px 25px;
+	line-height: 35px;
+	font-size: 26px;
+	font-weight: 300;
+	color: #777;
+	text-align: center;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+	background: #F7F7F7;
+}
+
+.signUpTitle:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 8px;
+	background: #C4E17F;
+	border-radius: 5px 5px 0 0;
+	background-image: -webkit-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%,
+		#F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%,
+		#DB9DBE 50%, #db9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%,
+		#669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+	background-image: -moz-linear-gradient(left, #c4e17f, #C4E17F 12.5%, #F7FDCA 12.5%,
+		#F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%,
+		#DB9DBE 50%, #DB9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%,
+		#669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+	background-image: -o-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCC 12.5%, #F7FDCA
+		25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE
+		50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1
+		87.5%, #62C2E4 87.5%, #62C2E4);
+	background-image: linear-gradient(to right, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA
+		25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE
+		50%, #DB9CBE 62.5%, #c49cde 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1
+		87.5%, #62c2e4 87.5%, #62C2E4);
+}
+
+input {
+	font-family: inherit;
+	color: inherit;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.signUpInput {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 25px;
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.signUpInput:focus {
+	border-color: #62C2E4;
+	outline: none;
+	-webkit-box-shadow: inset 0 -2px #62C2E4;
+	box-shadow: inset 0 -2px #62C2E4;
+}
+
+.lt-ie9 .signUpInput {
+	line-height: 48px;
+}
+
+.signUpButton {
+	position: relative;
+	vertical-align: top;
+	width: 100%;
+	height: 54px;
+	padding: 0;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #F0776C;
+	border: 0;
+	border-bottom: 2px solid #D76B60;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #D76B60;
+	box-shadow: inset 0 -2px #D76B60;
+}
+
+.signUpButton:active {
+	top: 1px;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+:-moz-placeholder {
+	color: #AAAAAA;
+	font-weight: 300;
+}
+
+::-moz-placeholder {
+	color: #AAAAAA;
+	opacity: 1;
+	font-weight: 300;
+}
+
+::-webkit-input-placeholder {
+	color: #AAAAAA;
+	font-weight: 300;
+}
+
+:-ms-input-placeholder {
+	color: #AAAAAA;
+	font-weight: 300;
+}
+
+::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+.login_append {
+	overflow: hidden;
+	padding: 15px 0 0;
+}
+
+.inp_chk .txt_lab {
+	vertical-align: top;
+}
+
+.inp_chk .lab_g {
+	display: inline-block;
+	margin-right: 19px;
+	color: #909090;
+	font-size: 13px;
+	line-height: 19px;
+	vertical-align: top;
+}
+
+label {
+	cursor: default;
+}
+
+.login_append .txt_find {
+	float: right;
+	color: #777;
+}
+
+label>div {
+	display: block;
+}
+
+.login_append {
+	overflow: hidden;
+	padding: 15px 0 0;
+}
+
+.txt_find >a {
+	color: #777;
+}
+/* 로그인 구성 끝 */
 
 /* 폼박스 시작 */
 .form-box>form {

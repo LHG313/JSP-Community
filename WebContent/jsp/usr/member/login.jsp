@@ -49,38 +49,32 @@
 			DoLoginForm__submited = true;
 		}
 	</script>
-	<form action="doLogin" method="POST"
+	<form class="signUp" id="signupForm" action="doLogin" method="POST"
 		onsubmit="DoLoginForm__submit(this); return false;">
-		<input type="hidden" name="loginPwReal" />
-		<input type="hidden" name="afterLoginUrl" value="${param.afterLoginUrl}" />
-		<hr />
-		<div>
-			<div>로그인 아이디</div>
-			<div>
-				<input name="loginId" type="text" maxlength="50"
-					placeholder="로그인 아이디를 입력해주세요." />
-			</div>
-		</div>
-
-		<hr />
-
-		<div>
-			<div>로그인 비번</div>
-			<div>
-				<input name="loginPw" type="password" maxlength="50"
-					placeholder="로그인 비밀번호를 입력해주세요." />
-			</div>
-		</div>
-
-		<hr />
-
-		<div>
-			<div>로그인</div>
-			<div class="btn-wrap">
-				<button type="submit" value="LOGIN" class="btn btn-success" href="#">로그인</button>
-				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
-			</div>
-		</div>
+		<input type="hidden" name="loginPwReal" /> <input type="hidden"
+			name="afterLoginUrl" value="${param.afterLoginUrl}" />
+			
+		<h1 class="signUpTitle">로그인</h1>
+		<input name="loginId"type="text" class="signUpInput"
+			placeholder="로그인 아이디를 입력해주세요." autofocus required> <input name="loginPw"
+			type="password" class="signUpInput" placeholder="로그인 비밀번호를 입력해주세요."
+			required> <input type="submit" value="로그인!"
+			class="signUpButton">
+			<div class="inp_chk"> <!-- 체크시 checked 추가 -->
+          <input type="checkbox" id="keepLogin" class="inp_radio"  name="keepLogin">
+          <label for="keepLogin" class="lab_g">
+<span class="img_top ico_check"></span>
+<span class="txt_lab">로그인 상태 유지</span>
+  </label>
+        </div>
+        <br>
+        <span class="txt_find">
+           <a href="../member/findLoginId" class="link_find">아이디</a>
+            / 
+           <a href="../member/findLoginPw" class="link_find">비밀번호 찾기</a>
+         </span>
+      </div>
+			
 	</form>
 </div>
 <%@ include file="../../part/foot.jspf"%>
