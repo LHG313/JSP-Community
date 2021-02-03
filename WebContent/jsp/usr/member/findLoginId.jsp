@@ -9,7 +9,7 @@
 
 
 <div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
+	<h1 class="con flex flex-jc-c">
 		<span><i class="far fa-address-card"></i></span><span>${pageTitle}</span>
 	</h1>
 </div>
@@ -40,36 +40,33 @@
 			DoFindLoginIdForm__submited = true;
 		}
 	</script>
-	<form action="doFindLoginId" method="POST"
+	<form class="signUp" id="signupForm" action="doFindLoginId" method="POST"
 		onsubmit="DoFindLoginIdForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
-		<hr />
+		
+		<h1 class="signUpTitle">아이디 찾기</h1>
 		<div>
 			<div>이름</div>
 			<div>
-				<input name="name" type="text" maxlength="50"
+				<input name="name" type="text" class="signUpInput" maxlength="50"
 					placeholder="이름을 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
+		
 
 		<div>
 			<div>이메일</div>
 			<div>
-				<input name="email" type="email" maxlength="50"
+				<input name="email" type="email" class="signUpInput" maxlength="50"
 					placeholder="회원의 이메일주소를 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
-			<div>로그인아이디 찾기</div>
-			<div class="btn-wrap">
-				<button type="submit" value="아이디찾기" class="btn btn-success" href="#">아이디찾기</button>
-				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
-			</div>
+		<input type="submit" value="아이디 찾기"
+			class="signUpButton">
 		</div>
 	</form>
 </div>

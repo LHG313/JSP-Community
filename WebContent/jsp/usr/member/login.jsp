@@ -9,7 +9,7 @@
 
 
 <div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
+	<h1 class="con flex flex-jc-c">
 		<span><i class="fas fa-sign-in-alt"></i></span><span>${pageTitle}</span>
 	</h1>
 </div>
@@ -72,7 +72,9 @@
            <a href="../member/findLoginId" class="link_find">아이디</a>
             / 
            <a href="../member/findLoginPw" class="link_find">비밀번호 찾기</a>
+           <a href="../member/join" class="link_find">회원가입</a>
          </span>
+          
       </div>
 			
 	</form>

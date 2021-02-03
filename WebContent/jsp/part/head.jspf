@@ -107,24 +107,23 @@
 		</header>
 
 		<!-- 모바일 탑바 시작 -->
-		<header class="mobile-top-bar con-min-width visible-sm-down">
-			<div class="con flex height-100p">
-			<div class="flex-1-0-0 flex">
-				<div class="mobile-top-bar__btn-toggle-side-bar flex-as-c">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</div>
-			</div>
-			<div>
-				<a href="#" class="logo height-100p"> <span><i
-						class="fas fa-landmark"></i></span><span>HISTORY</span>
-				</a>
-			</div>
-			
-		</header>
-		<!-- 모바일 탑바 끝 -->
+		<header class="mobile-top-bar con-min-width visible-sm-down flex ">
+    <div class="flex-1-0-0 flex flex-ai-c">
+      <div class="mobile-top-bar__btn-toggle-side-bar ">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div>
+      <a href="../home/main" class="logo height-100p flex flex-ai-c">
+        <span><i class="fas fa-landmark"></i></span></span>
+        <span>HISTORY</span>
+      </a>
+    </div>
+    <div class="flex-1-0-0"></div>
+  </header>
+  		<!-- 모바일 탑바 끝 -->
 
 		<!-- 모바일 사이드 바 시작 -->
 		<div class="mobile-top-bar-padding visible-sm-down"></div>

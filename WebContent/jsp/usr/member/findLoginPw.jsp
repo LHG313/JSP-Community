@@ -8,7 +8,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
 <div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
+	<h1 class="con flex flex-jc-c">
 		<span><i class="fas fa-key"></i></span><span>${pageTitle}</span>
 	</h1>
 </div>
@@ -38,37 +38,28 @@
 			DoFindLoginPwForm__submited = true;
 		}
 	</script>
-	<form action="doFindLoginPw" method="POST"
+	<form class="signUp" id="signupForm" action="doFindLoginPw"
+		method="POST"
 		onsubmit="DoFindLoginPwForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
-		<hr />
+
+		<h1 class="signUpTitle">비밀번호 찾기</h1>
 		<div>
 			<div>로그인아이디</div>
 			<div>
-				<input name="loginId" type="text" maxlength="50"
+				<input name="loginId" type="text" maxlength="50" class="signUpInput"
 					placeholder="로그인아이디를 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
-
 		<div>
 			<div>이메일</div>
 			<div>
-				<input name="email" type="email" maxlength="50"
+				<input name="email" type="email" class="signUpInput" maxlength="50"
 					placeholder="가입시 입력한 이메일을 입력해주세요." />
 			</div>
 		</div>
-
-		<hr />
-
-		<div>
-			<div>로그인비번 찾기</div>
-			<div class="btn-wrap">
-				<button type="submit" value="로그인비번찾기" class="btn btn-success" href="#">로그인비번찾기</button>
-				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
-			</div>
-		</div>
+		<input type="submit" value="비밀번호 찾기" class="signUpButton">
 	</form>
 </div>
 <%@ include file="../../part/foot.jspf"%>

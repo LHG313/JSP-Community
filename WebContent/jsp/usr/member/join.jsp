@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="pageTitle" value="회원가입" />
+<c:set var="pageTitle" value="가입하기" />
 <%@ include file="../../part/head.jspf"%>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
 <div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
+	<h1 class="con flex flex-jc-c">
 		<span><i class="far fa-hand-pointer"></i></span><span>${pageTitle}</span>
 	</h1>
 </div>
@@ -132,89 +132,78 @@
 		DoJoinForm__submited = true;
 	}
 	</script>
-	<form action="doJoin" method="POST"
+	<form class="sign-Up" id="signupForm action="doJoin" method="POST"
 		onsubmit="DoJoinForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
-		<hr />
+	<h1 class="signUpTitle">회원가입</h1>
 		<div>
 			<div>로그인 아이디</div>
 			<div>
-				<input name="loginId" type="text" maxlength="50"
-					placeholder="로그인 아이디를 입력해주세요." />
+				<input name="loginId" type="text" class="signUpInput" maxlength="100"
+					placeholder="로그인 아이디를 입력해주세요."></input>
 
-				<button onclick="DoJoinForm__checkLoginIdDup(this);"
+				<button class="btn btn-success" onclick="DoJoinForm__checkLoginIdDup(this);"
 					name="btnLoginIdDupCheck" type="button">중복체크</button>
 			</div>
 		</div>
 
-		<hr />
-
+		<br>
 		<div>
 			<div>로그인 비번</div>
 			<div>
-				<input name="loginPw" type="password" maxlength="50"
-					placeholder="로그인 비밀버호를 입력해주세요." />
+				<input name="loginPw" type="password" class="signUpInput" maxlength="100"
+					placeholder="로그인 비밀번호를 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
 			<div>로그인 비밀번호 확인</div>
 			<div>
-				<input name="loginPwConfirm" type="password" maxlength="50"
+				<input name="loginPwConfirm" type="password" class="signUpInput" maxlength="100"
 					placeholder="로그인 비밀번호 확인을 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
 			<div>이름</div>
 			<div>
-				<input name="name" type="text" maxlength="50"
+				<input name="name" type="text" class="signUpInput" maxlength="100"
 					placeholder="이름을 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
-
 		<div>
 			<div>별명</div>
 			<div>
-				<input name="nickname" type="text" maxlength="50"
+				<input name="nickname" type="text" class="signUpInput" maxlength="100"
 					placeholder="별명을 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
 			<div>이메일</div>
 			<div>
-				<input name="email" type="email" maxlength="100"
+				<input name="email" type="email" class="signUpInput" maxlength="100"
 					placeholder="이메일을 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
 			<div>전화번호</div>
 			<div>
-				<input name="cellphoneNo" type="tel" maxlength="100"
+				<input name="cellphoneNo" type="tel" class="signUpInput" maxlength="100"
 					placeholder="전화번호를 입력해주세요." />
 			</div>
 		</div>
 
-		<hr />
 
 		<div>
-			<div>가입</div>
-			<div class="btn-wrap">
-				<button type="submit" value="가입" class="btn btn-success" href="#">가입</button>
-				<button class="btn btn-info" onclick="history.back();">뒤로가기</button>
-			</div>
+			<input type="submit" value="가입하기"
+			class="signUpButton">
 		</div>
 	</form>
 </div>
