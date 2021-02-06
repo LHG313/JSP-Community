@@ -11,7 +11,8 @@ import com.sbs.example.jspCommunity.controller.AdmMemberController;
 @WebServlet("/adm/*")
 public class AdmDispatcherServlet extends DispatcherServlet {
 	@Override
-	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName, String actionMethodName) {
+	protected String doAction(HttpServletRequest req, HttpServletResponse resp, String controllerName,
+			String actionMethodName) {
 		String jspPath = null;
 
 		if (controllerName.equals("member")) {
@@ -20,6 +21,7 @@ public class AdmDispatcherServlet extends DispatcherServlet {
 			if (actionMethodName.equals("list")) {
 				jspPath = memberController.showList(req, resp);
 			}
+
 		}
 
 		return jspPath;
