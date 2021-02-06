@@ -61,7 +61,20 @@ public abstract class DispatcherServlet extends HttpServlet {
 			return null;
 		}
 
-		MysqlUtil.setDBInfo("127.0.0.1", "root", "", "jspCommunity");
+		String profilesActive = System.getProperty("spring.profiles.active");
+		
+		boolean isProductionMode = false;
+
+		if (profilesActive != null && profilesActive.equals("production")) {
+		  isProductionMode = true;
+		}
+				
+		if ( isProductionMode ) {
+		  MysqlUtil.setDBInfo("127.0.0.1", "sbsstLocal", "sbs123414", "jspCommunity");
+		}
+		else {
+		  MysqlUtil.setDBInfo("127.0.0.1", "sbsst", "sbs123414", "jspCommunity");			
+		}
 
 		String controllerTypeName = requestUriBits[2];
 		String controllerName = requestUriBits[3];
@@ -85,15 +98,15 @@ public abstract class DispatcherServlet extends HttpServlet {
 		req.setAttribute("isLogined", isLogined);
 		req.setAttribute("loginedMemberId", loginedMemberId);
 		req.setAttribute("loginedMember", loginedMember);
-		
+
 		String currentUrl = req.getRequestURI();
-		
+
 		if (req.getQueryString() != null) {
 			currentUrl += "?" + req.getQueryString();
 		}
 
 		String encodedCurrentUrl = Util.getUrlEncoded(currentUrl);
-		
+
 		req.setAttribute("currentUrl", currentUrl);
 		req.setAttribute("encodedCurrentUrl", encodedCurrentUrl);
 

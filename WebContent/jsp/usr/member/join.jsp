@@ -132,7 +132,7 @@
 		DoJoinForm__submited = true;
 	}
 	</script>
-	<form class="sign-Up" id="signupForm action="doJoin" method="POST"
+	<form class="sign-Up" id="signupForm" action="doJoin" method="POST"
 		onsubmit="DoJoinForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
 	<h1 class="signUpTitle">회원가입</h1>

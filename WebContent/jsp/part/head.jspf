@@ -50,62 +50,114 @@
 	href="${pageContext.request.contextPath}/static/common.css" />
 <script src="${pageContext.request.contextPath}/static/common.js" defer></script>
 
+
 </head>
 <body>
 	<div class="body-content">
-
 		<header class="top-bar con-min-width visible-md-up">
 			<div class="con flex height-100p">
-				<a href="../home/main" class="logo  flex flex-ai-c"> <span><i
-						class="fas fa-landmark"></i></span> <span>HISTORY</span>
+				<a href="../home/main" class="logo flex flex-ai-c">
+					<span>
+						<i class="fas fa-landmark"></i>
+					</span>
+					<span>HISTORY</span>
 				</a>
 
 				<div class="flex-grow-1"></div>
 
 				<nav class="top-bar__menu-box-1">
 					<ul class="flex height-100p">
-						<li><a href="../home/main" class="flex flex-ai-c height-100p">
-								<span> <i class="fas fa-home"></i></span><span>HOME</span>
-						</a></li>
-						<c:if test="${isLogined == false}">
-							<li><a href="../member/login"
-								class="flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-sign-in-alt"></i></span><span>로그인</span>
-							</a></li>
-							<li><a href="../member/join"
-								class="flex flex-ai-c height-100p"> <span> <i
-										class="far fa-hand-pointer"></i></span><span>회원가입</span>
-							</a></li>
-							<li><a href="../member/findLoginId"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="far fa-address-card"></i></span><span>아이디 찾기</span>
-							</a></li>
-							<li><a href="../member/findLoginPw"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-key"></i></span><span>비밀번호 찾기</span>
-							</a></li>
-						</c:if>
+						<li>
+							<a class="flex flex-ai-c height-100p">
+								<span>
+									<i class="fas fa-sign-in-alt"></i>
+								</span>
+								<span>게시판</span>
+							</a>
+							<div class="con-min-width">
+								<div class="con">
+									<ul>
+										<li>
+											<a href="../article/list?boardId=1" class="block">
+												<span>
+													<i class="far fa-flag"></i>
+												</span>
+												<span>공지사항</span>
+											</a>
+										</li>
+										<li>
+											<a href="../article/list?boardId=1" class="block">
+												<span>
+													<i class="fas fa-users"></i>
+												</span>
+												<span>커뮤니티</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
 						<c:if test="${isLogined}">
-							<li><a href="../article/write?boardId=1"
-								class=" flex
-								flex-ai-c height-100p"> <span>
-										<i class="far fa-paper-plane"></i>
-								</span><span>공지사항 글쓰기</span>
-							</a></li>
-							<li><a href="../member/modify"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-user-edit"></i></span><span>회원정보 수정</span>
-							</a></li>
-							<li><a href="../member/doLogout"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-sign-out-alt"></i></span><span>로그아웃</span>
-							</a></li>
+							<li>
+								<a href="../member/modify" class="flex flex-ai-c height-100p">
+									<span>
+										<i class="fas fa-sign-in-alt"></i>
+									</span>
+									<span>회원정보수정</span>
+								</a>
+							</li>
+							<li>
+								<a href="../member/doLogout" class="flex flex-ai-c height-100p">
+									<span>
+										<i class="fas fa-sign-in-alt"></i>
+									</span>
+									<span>로그아웃</span>
+								</a>
+							</li>
+						</c:if>
+
+						<c:if test="${isLogined == false}">
+							<li>
+								<a href="../member/login" class="flex flex-ai-c height-100p">
+									<span>
+										<i class="fas fa-sign-in-alt"></i>
+									</span>
+									<span>로그인</span>
+								</a>
+							</li>
+							<li>
+								<a href="../member/join" class="flex flex-ai-c height-100p">
+									<span>
+										<i class="fas fa-user-plus"></i>
+									</span>
+									<span>회원가입</span>
+								</a>
+							</li>
+							<li>
+								<a href="../member/findLoginId"
+									class="flex flex-ai-c height-100p">
+									<span>
+										<i class="far fa-user-circle"></i>
+									</span>
+									<span>아이디찾기</span>
+								</a>
+							</li>
+							<li>
+								<a href="../member/findLoginPw"
+									class="flex flex-ai-c height-100p">
+									<span>
+										<i class="far fa-user-circle"></i>
+									</span>
+									<span>비번찾기</span>
+								</a>
+							</li>
 						</c:if>
 					</ul>
 				</nav>
 			</div>
 		</header>
-
+		
+		
 		<!-- 모바일 탑바 시작 -->
 		<header class="mobile-top-bar con-min-width visible-sm-down flex ">
     <div class="flex-1-0-0 flex flex-ai-c">
@@ -117,63 +169,102 @@
     </div>
     <div>
       <a href="../home/main" class="logo height-100p flex flex-ai-c">
-        <span><i class="fas fa-landmark"></i></span></span>
+        <span><i class="fas fa-landmark"></i></span>
         <span>HISTORY</span>
       </a>
     </div>
     <div class="flex-1-0-0"></div>
   </header>
   		<!-- 모바일 탑바 끝 -->
-
-		<!-- 모바일 사이드 바 시작 -->
+  		
+  		<!-- 모바일 사이드 바 시작 -->
 		<div class="mobile-top-bar-padding visible-sm-down"></div>
-		
+  		
 		<aside class="mobile-side-bar visible-sm-down">
-
 			<nav class="mobile-side-bar__menu-box-1">
 				<ul>
-					<li><a href="../home/main" class="flex flex-ai-c height-100p">
-								<span> <i class="fas fa-home"></i></span><span>HOME</span>
-						</a></li>
-						<c:if test="${isLogined == false}">
-							<li><a href="../member/login"
-								class="flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-sign-in-alt"></i></span><span>로그인</span>
-							</a></li>
-							<li><a href="../member/join"
-								class="flex flex-ai-c height-100p"> <span> <i
-										class="far fa-hand-pointer"></i></span><span>회원가입</span>
-							</a></li>
-							<li><a href="../member/findLoginId"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="far fa-address-card"></i></span><span>아이디 찾기</span>
-							</a></li>
-							<li><a href="../member/findLoginPw"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-key"></i></span><span>비밀번호 찾기</span>
-							</a></li>
-						</c:if>
-						<c:if test="${isLogined}">
-							<li><a href="../article/write?boardId=1"
-								class=" flex
-								flex-ai-c height-100p"> <span>
-										<i class="far fa-paper-plane"></i>
-								</span><span>공지사항 글쓰기</span>
-							</a></li>
-							<li><a href="../member/modify"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-user-edit"></i></span><span>회원정보 수정</span>
-							</a></li>
-							<li><a href="../member/doLogout"
-								class=" flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-sign-out-alt"></i></span><span>로그아웃</span>
-							</a></li>
-						</c:if>
+					<li>
+						<a class="block">
+							<span>
+								<i class="fas fa-sign-in-alt"></i>
+							</span>
+							<span>게시판</span>
+						</a>
+
+						<ul>
+							<li>
+								<a href="../article/list?boardId=1" class="block">
+									<span>
+										<i class="far fa-flag"></i>
+									</span>
+									<span>공지사항</span>
+								</a>
+							</li>
+							<li>
+								<a href="../article/list?boardId=1" class="block">
+									<span>
+										<i class="fas fa-users"></i>
+									</span>
+									<span>커뮤니티</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<c:if test="${isLogined}">
+						<li>
+							<a href="../member/modify" class="block">
+								<span>
+									<i class="fas fa-sign-in-alt"></i>
+								</span>
+								<span>회원정보수정</span>
+							</a>
+						</li>
+						<li>
+							<a href="../member/doLogout" class="block">
+								<span>
+									<i class="fas fa-sign-in-alt"></i>
+								</span>
+								<span>로그아웃</span>
+							</a>
+						</li>
+					</c:if>
+
+					<c:if test="${isLogined == false}">
+						<li>
+							<a href="../member/login" class="block">
+								<span>
+									<i class="fas fa-sign-in-alt"></i>
+								</span>
+								<span>로그인</span>
+							</a>
+						</li>
+						<li>
+							<a href="../member/join" class="block">
+								<span>
+									<i class="fas fa-user-plus"></i>
+								</span>
+								<span>회원가입</span>
+							</a>
+						</li>
+						<li>
+							<a href="../member/findLoginId" class="block">
+								<span>
+									<i class="far fa-user-circle"></i>
+								</span>
+								<span>아이디찾기</span>
+							</a>
+						</li>
+						<li>
+							<a href="../member/findLoginPw" class="block">
+								<span>
+									<i class="far fa-user-circle"></i>
+								</span>
+								<span>비번찾기</span>
+							</a>
+						</li>
+					</c:if>
 				</ul>
 			</nav>
-
 		</aside>
-		<!-- 모바일 사이드 바 끝 -->
-
 
 		<main>
