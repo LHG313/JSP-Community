@@ -60,12 +60,7 @@ public abstract class DispatcherServlet extends HttpServlet {
 			resp.getWriter().append("올바른 요청이 아닙니다.");
 			return null;
 		}
-		
-		String profilesActive = System.getProperty("spring.profiles.active");
-		
-		boolean isProductionMode = false;
 
-<<<<<<< HEAD
 		String profilesActive = System.getProperty("spring.profiles.active");
 		
 		boolean isProductionMode = false;
@@ -79,17 +74,6 @@ public abstract class DispatcherServlet extends HttpServlet {
 		}
 		else {
 		  MysqlUtil.setDBInfo("127.0.0.1", "sbsst", "sbs123414", "jspCommunity");			
-=======
-		if (profilesActive != null && profilesActive.equals("production")) {
-			isProductionMode = true;
-		}
-		
-		if ( isProductionMode ) {
-			MysqlUtil.setDBInfo("127.0.0.1", "sbsstLocal", "sbs123414", "jspCommunity");
-		}
-		else {
-			MysqlUtil.setDBInfo("127.0.0.1", "sbsst", "sbs123414", "jspCommunity");
->>>>>>> 5080d6d23eb5cefa2794e99c187b5d664babb241
 		}
 
 		String controllerTypeName = requestUriBits[2];
