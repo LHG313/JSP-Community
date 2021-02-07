@@ -16,6 +16,7 @@ function MobileTopBar__init() {
 
 MobileTopBar__init();
 
+// 토스트에디터 시작
 // 유튜브 플러그인 시작
 function youtubePlugin() {
   toastui.Editor.codeBlockManager.setReplacer('youtube', youtubeId => {
@@ -61,7 +62,13 @@ function renderCodepen(wrapperId, url) {
 function Editor__init() {
   $('.toast-ui-editor').each(function(index, node) {
     var initialValue = $(node).prev().html().trim().replace(/t-script/gi, 'script');
-    
+
+	// 토스트 UI에
+	// <br/> 두개 들어가는 버그를 없애기 위한 궁여지책
+	if ( initialValue.length == 0 ) {
+		initialValue = " ";
+	}
+
     var editor = new toastui.Editor({
       el: node,
       previewStyle: 'vertical',
@@ -88,3 +95,4 @@ function EditorViewer__init() {
 
 EditorViewer__init();
 Editor__init();
+// 토스트에디터 끝
