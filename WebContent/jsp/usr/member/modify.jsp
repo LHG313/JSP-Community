@@ -8,7 +8,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
 <div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
+	<h1 class="con flex flex-jc-c">
 		<span><i class="fas fa-user-edit"></i></span><span>${pageTitle}</span>
 	</h1>
 </div>
@@ -90,10 +90,11 @@
 		DoModifyForm__submited = true;
 	}
 	</script>
-	<form action="doModify" method="POST"
+	<form class="signUp" id="signupForm" action="doModify" method="POST"
 		onsubmit="DoModifyForm__submit(this); return false;">
 		<input type="hidden" name="loginPwReal" />
-		<hr />
+		
+		<h1 class="signUpTitle">회원정보 수정</h1>
 		<div>
 			<div>로그인 아이디</div>
 			<div>${loginedMember.loginId}</div>
