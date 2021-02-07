@@ -92,14 +92,14 @@
 	<div class="con btn-wrap">
 		<c:if test="${article.extra.actorCanLike}">
 			<a class="btn btn-primary" href="../like/doLike?relTypeCode=article&relId=${article.id}&redirectUrl=${encodedCurrentUrl}" onclick="if ( !confirm('`좋아요` 처리 하시겠습니까?') ) return false;">
-				<span><i class="fas fa-thumbs-up"></i></span>
+				<span><i class="far fa-thumbs-up"></i></span>
 				<span>좋아요</span>
 			</a>
 		</c:if>
 		
 		<c:if test="${article.extra.actorCanCancelLike}">
 			<a class="btn btn-info" href="../like/doCancelLike?relTypeCode=article&relId=${article.id}&redirectUrl=${encodedCurrentUrl}" onclick="if ( !confirm('`좋아요`를 취소 처리 하시겠습니까?') ) return false;">
-				<span><i class="fas fa-slash"></i></span>
+				<span><i class="far fa-slash"></i></span>
 				<span>좋아요 취소</span>
 			</a>
 		</c:if>
