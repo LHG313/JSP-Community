@@ -9,18 +9,18 @@ import com.sbs.example.jspCommunity.container.Container;
 import com.sbs.example.jspCommunity.dto.Member;
 import com.sbs.example.jspCommunity.service.MemberService;
 
-public class AdmMemberController {
+public class AdmMemberController extends Controller {
 	private MemberService memberService;
-
+	
 	public AdmMemberController() {
 		memberService = Container.memberService;
 	}
-
+	
 	public String showList(HttpServletRequest req, HttpServletResponse resp) {
 		List<Member> members = memberService.getForPrintMembers();
-
+		
 		req.setAttribute("members", members);
-
+		
 		return "adm/member/list";
 	}
 }
