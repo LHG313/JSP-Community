@@ -208,3 +208,15 @@ var param = ${paramJson};
 		</aside>
 
 		<main>
+		<!-- 위로 가는 버튼 -->
+<div id="top">
+	<a href="#"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script>
+	$('#top').click(function() {
+		$('html, body').animate({
+			scrollTop : 0
+		}, 'slow');
+	});
+</script>
+<!-- // 위로 가는 버튼 -->
