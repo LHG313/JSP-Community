@@ -1,21 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="pageTitle" value="메인화면" />
+<c:set var="pageTitle" value="홈" />
 <%@ include file="../../part/head.jspf"%>
 
-<div class="title-bar padding-0-10 con-min-width">
-	<h1 class="con">
-		<span><i class="fas fa-home"></i></span><span>${pageTitle}</span>
-	</h1>
-</div>
+<section class="section-top-banner con-min-width">
+	<div class="con img-box">
+		<div class="img">
+			<div class="content">
+				<div class="loading">
+					<span>환</span> <span>영</span> <span>합</span> <span>니</span> <span>다</span>
+					<span>~</span> <span>!</span>
+				</div>
+			</div>
+			<div class="img-cover"></div>
+		</div>
+	</div>
+</section>
 
+<section class="section-prod-list con-min-width">
+	<div class="con">
 
+		<div class="prod-list-1">
+			<ul class="row">
+				<li class="cell">
+					<div class="img-box">
+						<img
+							src="https://images.unsplash.com/photo-1501183007986-d0d080b147f9"
+							alt="">
+					</div>
+					<div class="prod-name">
+						<a href="../article/list?boardId=3" class="block"> <span>
+								⚽ </span> <span>자유</span>
+						</a>
+					</div>
+				</li>
+				<li class="cell">
+					<div class="img-box">
+						<img
+							src="https://images.unsplash.com/photo-1506809060920-edbd698dabb8"
+							alt="">
+					</div>
+					<div class="prod-name">
+						<a href="../article/list?boardId=4" class="block"> <span>
+								👨‍🏫 </span> <span>한국사공부</span>
+						</a>
+					</div>
+				</li>
+				<li class="cell">
+					<div class="img-box">
+						<img
+							src="https://images.unsplash.com/photo-1580656449548-a2278870021d"
+							alt="">
+					</div>
+					<div class="prod-name">
+						<a href="../article/list?boardId=1" class="block"> <span>
+								<i class="far fa-flag"></i>
+						</span> <span>공지사항</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
 
-
-
-
+	</div>
+</section>
 <%@ include file="../../part/foot.jspf"%>
-
