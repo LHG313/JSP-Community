@@ -226,8 +226,12 @@ a {
 
 .top-bar__menu-box-1 > ul > li > div > div > ul > li:hover > a {
 	text-decoration: underline;
+	
 }
 
+.top-bar__menu-box-1 > ul > li {
+	z-index:1000;
+}
 
 .top-bar> div > a {
   background-color:black;
