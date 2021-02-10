@@ -940,7 +940,7 @@ section{
 
 .img{
     position: relative;
-    background-image: url(https://images.unsplash.com/photo-1524492514790-8310bf594ea4);                                                               
+    background-image: url(${pageContext.request.contextPath}/img/화면1.jpeg);                                                               
     height: 100vh;
     background-size: cover;
   }

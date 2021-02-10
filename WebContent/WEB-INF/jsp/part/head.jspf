@@ -110,8 +110,7 @@ var param = ${paramJson};
 								</span> <span>로그인</span>
 							</a></li>
 							<li><a href="../member/join"
-								class="flex flex-ai-c height-100p"> <span> <i
-										class="fas fa-user-plus"></i>
+								class="flex flex-ai-c height-100p"> <span> 🙆‍♂
 								</span> <span>회원가입</span>
 							</a></li>
 							<li><a href="../member/findLoginId"
@@ -191,7 +190,7 @@ var param = ${paramJson};
 							</span> <span>로그인</span>
 						</a></li>
 						<li><a href="../member/join" class="block"> <span>
-									<i class="fas fa-user-plus"></i>
+									🙆‍♂
 							</span> <span>회원가입</span>
 						</a></li>
 						<li><a href="../member/findLoginId" class="block"> <span>

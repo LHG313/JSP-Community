@@ -75,7 +75,7 @@
 				</tr>
 				<tr>
 					<th>
-						<span>좋아요</span>
+						<span>좋아요 👍</span>
 					</th>
 					<td>
 						<div>${article.extra__likeOnlyPoint}</div>
@@ -83,7 +83,7 @@
 				</tr>
 				<tr>
 					<th>
-						<span>싫어요</span>
+						<span>싫어요 👎</span>
 					</th>
 					<td>
 						<div>${article.extra__dislikeOnlyPoint}</div>
@@ -117,7 +117,7 @@
 				<span>
 					<i class="far fa-thumbs-up"></i>
 				</span>
-				<span>좋아요</span>
+				<span>좋아요 👍</span>
 			</a>
 		</c:if>
 
@@ -139,7 +139,7 @@
 				<span>
 					<i class="far fa-thumbs-down"></i>
 				</span>
-				<span>싫어요</span>
+				<span>싫어요 👎</span>
 			</a>
 		</c:if>
 
@@ -315,13 +315,13 @@
 						<td>
 							<span class="response-list-box__likeOnlyPoint">
 								<span>
-									<i class="far fa-thumbs-up"></i>
+									👍
 								</span>
 								<span> ${reply.extra__likeOnlyPoint} </span>
 							</span>
 							<span class="response-list-box__dislikeOnlyPoint">
 								<span>
-									<i class="far fa-thumbs-down"></i>
+									👎
 								</span>
 								<span> ${reply.extra__dislikeOnlyPoint} </span>
 							</span>
@@ -347,13 +347,13 @@
 							<div class="flex">
 								<span class="response-list-box__likeOnlyPoint">
 									<span>
-										<i class="far fa-thumbs-up"></i>
+										👍
 									</span>
 									<span> ${reply.extra__likeOnlyPoint} </span>
 								</span>
 								<span class="response-list-box__dislikeOnlyPoint">
 									<span>
-										<i class="far fa-thumbs-down"></i>
+										👎
 									</span>
 									<span> ${reply.extra__dislikeOnlyPoint} </span>
 								</span>

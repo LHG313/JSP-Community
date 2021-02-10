@@ -26,7 +26,7 @@
 				<li class="cell">
 					<div class="img-box">
 						<img
-							src="https://images.unsplash.com/photo-1501183007986-d0d080b147f9"
+							src="${pageContext.request.contextPath}/img/화면2.jpeg"
 							alt="">
 					</div>
 					<div class="prod-name">
@@ -38,7 +38,7 @@
 				<li class="cell">
 					<div class="img-box">
 						<img
-							src="https://images.unsplash.com/photo-1506809060920-edbd698dabb8"
+							src="${pageContext.request.contextPath}/img/화면3.jpeg"
 							alt="">
 					</div>
 					<div class="prod-name">
@@ -50,7 +50,7 @@
 				<li class="cell">
 					<div class="img-box">
 						<img
-							src="https://images.unsplash.com/photo-1580656449548-a2278870021d"
+							src="${pageContext.request.contextPath}/img/화면4.jpeg"
 							alt="">
 					</div>
 					<div class="prod-name">

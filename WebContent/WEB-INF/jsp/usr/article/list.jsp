@@ -135,7 +135,7 @@
 						<td>
 							<span class="response-list-box__likeOnlyPoint">
 								<span>
-									<i class="far fa-thumbs-up"></i>
+									👍
 								</span>
 								<span>
 									${article.extra__likeOnlyPoint}
@@ -143,7 +143,7 @@
 							</span>
 							<span class="response-list-box__dislikeOnlyPoint">
 								<span>
-									<i class="far fa-thumbs-down"></i>
+									👎
 								</span>
 								<span>
 									${article.extra__dislikeOnlyPoint}
@@ -167,7 +167,7 @@
 							<div class="flex">
 								<span class="response-list-box__likeOnlyPoint">
 									<span>
-										<i class="far fa-thumbs-up"></i>
+										👍
 									</span>
 									<span>
 										${article.extra__likeOnlyPoint}
@@ -175,7 +175,7 @@
 								</span>
 								<span class="response-list-box__dislikeOnlyPoint">
 									<span>
-										<i class="far fa-thumbs-down"></i>
+										👎
 									</span>
 									<span>
 										${article.extra__dislikeOnlyPoint}
