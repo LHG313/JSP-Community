@@ -60,6 +60,19 @@
 						</a>
 					</div>
 				</li>
+				<li class="cell">
+					<div class="img-box">
+						<img
+							src="${pageContext.request.contextPath}/img/화면5.jpeg"
+							alt="">
+					</div>
+					<div class="prod-name">
+						<a href="../article/list?boardId=5" class="block"> <span>
+								🏇
+						</span> <span>고사성어</span>
+						</a>
+					</div>
+				</li>
 			</ul>
 		</div>
 

@@ -80,12 +80,13 @@ var param = ${paramJson};
 											</span> <span>공지사항</span>
 										</a></li>
 										<li><a href="../article/list?boardId=4" class="block">
-												<span> 👨‍🏫
-											</span> <span>한국사공부</span>
+												<span> 👨‍🏫 </span> <span>한국사공부</span>
 										</a></li>
 										<li><a href="../article/list?boardId=3" class="block">
-												<span> ⚽
-											</span> <span>자유</span>
+												<span> ⚽ </span> <span>자유</span>
+										</a></li>
+										<li><a href="../article/list?boardId=5" class="block">
+												<span> 🏇 </span> <span>고사성어</span>
 										</a></li>
 									</ul>
 								</div>
@@ -110,8 +111,7 @@ var param = ${paramJson};
 								</span> <span>로그인</span>
 							</a></li>
 							<li><a href="../member/join"
-								class="flex flex-ai-c height-100p"> <span> 🙆‍♂
-								</span> <span>회원가입</span>
+								class="flex flex-ai-c height-100p"> <span> 🙆‍♂ </span> <span>회원가입</span>
 							</a></li>
 							<li><a href="../member/findLoginId"
 								class="flex flex-ai-c height-100p"> <span> <i
@@ -165,12 +165,13 @@ var param = ${paramJson};
 								</span> <span>공지사항</span>
 							</a></li>
 							<li><a href="../article/list?boardId=4" class="block"> <span>
-										👨‍🏫
-								</span> <span>한국사공부</span>
+										👨‍🏫 </span> <span>한국사공부</span>
 							</a></li>
 							<li><a href="../article/list?boardId=3" class="block"> <span>
-										⚽
-								</span> <span>자유</span>
+										⚽ </span> <span>자유</span>
+							</a></li>
+							<li><a href="../article/list?boardId=5" class="block"> <span>
+										🏇 </span> <span>고사성어</span>
 							</a></li>
 						</ul></li>
 					<c:if test="${isLogined}">
@@ -190,8 +191,7 @@ var param = ${paramJson};
 							</span> <span>로그인</span>
 						</a></li>
 						<li><a href="../member/join" class="block"> <span>
-									🙆‍♂
-							</span> <span>회원가입</span>
+									🙆‍♂ </span> <span>회원가입</span>
 						</a></li>
 						<li><a href="../member/findLoginId" class="block"> <span>
 									<i class="far fa-user-circle"></i>
@@ -207,15 +207,15 @@ var param = ${paramJson};
 		</aside>
 
 		<main>
-		<!-- 위로 가는 버튼 -->
-<div id="top">
-	<a href="#"><i class="fa fa-arrow-up"></i></a>
-</div>
-<script>
-	$('#top').click(function() {
-		$('html, body').animate({
-			scrollTop : 0
-		}, 'slow');
-	});
-</script>
-<!-- // 위로 가는 버튼 -->
+			<!-- 위로 가는 버튼 -->
+			<div id="top">
+				<a href="#"><i class="fa fa-arrow-up"></i></a>
+			</div>
+			<script>
+				$('#top').click(function() {
+					$('html, body').animate({
+						scrollTop : 0
+					}, 'slow');
+				});
+			</script>
+			<!-- // 위로 가는 버튼 -->
