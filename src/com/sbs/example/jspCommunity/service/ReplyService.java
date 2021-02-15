@@ -41,4 +41,9 @@ public class ReplyService {
 		return replyDao.delete(id);
 	}
 
+	public void doModify(Map<String, Object> args) {
+		replyDao.doModify(args);
+
+	}
+
 }

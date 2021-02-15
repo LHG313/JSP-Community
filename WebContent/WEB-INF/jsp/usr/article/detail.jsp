@@ -259,6 +259,8 @@
 	</div>
 </c:if>
 
+
+
 <div class="title-bar padding-0-10 con-min-width">
 	<h1 class="con">
 		<span>
@@ -366,9 +368,9 @@
 								<span
 									class="response-list-box__reg-date response-list-box__reg-date--mobile">${reply.regDate}</span>
 							</div>
-							
+			
 							<div class="btn-wrap">
-								<a class="btn btn-info" href="../reply/modify?id=${reply.id}&redirectUrl=${encodedCurrentUrl}">수정</a>
+								<a class="btn btn-info" href="../reply/doModify?id=${reply.id}">수정</a>
 								<a class="btn btn-danger"
 									onclick="if ( confirm('정말 삭제하시겠습니까?') == false ) { return false; }"
 									href="../reply/doDelete?id=${reply.id}&redirectUrl=${encodedCurrentUrl}">삭제</a>

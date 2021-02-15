@@ -93,9 +93,60 @@ public class UsrReplyController extends Controller {
 		return msgAndReplace(req, id + "번 댓글이 삭제되었습니다.", redirectUrl);
 	}
 
+	public String modify(HttpServletRequest req, HttpServletResponse resp) {
+		int id = Util.getAsInt(req.getParameter("id"), 0);
+
+		if (id == 0) {
+			return msgAndBack(req, "댓글 번호를 입력해주세요.");
+		}
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply == null) {
+			return msgAndBack(req, id + "번 댓글이 존재하지 않습니다.");
+		}
+
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+
+		if (reply.getMemberId() != loginedMemberId) {
+			return msgAndBack(req, "수정할 권한이 없습니다.");
+		}
+
+		req.setAttribute("reply", reply);
+		return "usr/reply/modify";
+	}
+
 	public String doModify(HttpServletRequest req, HttpServletResponse resp) {
-		// TODO Auto-generated method stub
-		return null;
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+		int id = Util.getAsInt(req.getParameter("id"), 0);
+
+		if (id == 0) {
+			return msgAndBack(req, "댓글 번호를 입력해주세요.");
+		}
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply == null) {
+			return msgAndBack(req, "존재하지 않는 댓글입니다.");
+		}
+
+		if (reply.getMemberId() != loginedMemberId) {
+			return msgAndBack(req, "수정할 권한이 없습니다.");
+		}
+
+		String body = req.getParameter("body");
+
+		if (Util.isEmpty(body)) {
+			return msgAndBack(req, "내용을 입력해주세요.");
+		}
+
+		Map<String, Object> modifyArgs = new HashMap<>();
+		modifyArgs.put("id", id);
+		modifyArgs.put("body", body);
+
+		replyService.doModify(modifyArgs);
+
+		return msgAndReplace(req, id + "번 댓글이 수정되었습니다.", String.format("../article/detail?id=%d", reply.getRelId()));
 	}
 
 }

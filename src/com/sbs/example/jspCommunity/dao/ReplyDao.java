@@ -77,4 +77,18 @@ public class ReplyDao {
 		return MysqlUtil.delete(sql);
 	}
 
+	public void doModify(Map<String, Object> args) {
+		SecSql sql = new SecSql();
+
+		sql.append("UPDATE reply");
+		sql.append("SET updateDate = NOW()");
+		if (args.get("body") != null) {
+			sql.append(", body = ?", args.get("body"));
+		}
+		sql.append("WHERE id = ?", args.get("id"));
+
+		MysqlUtil.update(sql);
+
+	}
+
 }
