@@ -189,4 +189,12 @@ public class ArticleDao {
 
 		return new Article(map);
 	}
+
+	public int increaseHit(int id) {
+		SecSql sql = SecSql.from("UPDATE article");
+		sql.append("SET hitsCount = hitsCount + 1");
+		sql.append("WHERE id = ?", id);
+
+		return MysqlUtil.update(sql);
+	}
 }

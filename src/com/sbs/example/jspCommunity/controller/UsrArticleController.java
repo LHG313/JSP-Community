@@ -97,6 +97,8 @@ public class UsrArticleController extends Controller {
 		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 
+		
+		articleService.increaseHit(id);
 		Article article = articleService.getForPrintArticleById(id, loginedMember);
 
 		if (article == null) {

@@ -75,4 +75,9 @@ public class ArticleService {
 	public Article getArticleById(int id) {
 		return articleDao.getArticleById(id);
 	}
+
+	public int increaseHit(int id) {
+		return articleDao.increaseHit(id);
+		
+	}
 }
